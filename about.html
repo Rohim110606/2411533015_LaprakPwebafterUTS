@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Abdur Rohim - Portfolio Lengkap</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="style.css"> 
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700;800&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <nav class="navbar navbar-expand-lg navbar-light fixed-top custom-navbar-fixed py-3">
+        <div class="container">
+            <a class="navbar-brand fw-bold" href="index.html">mydonatcandy</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+                    <li class="nav-item">
+                        <a class="nav-link" href="index.html">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="about.html">About</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="portfolio.html">Portfolio</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="project.html">Project</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="contact.html">Contact</a>
+                    </li>
+                </ul>
+                <form class="d-flex ms-3" role="search">
+                    <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+                    <button class="btn btn-outline-secondary" type="submit"><i class="fas fa-search"></i></button>
+                </form>
+            </div>
+        </div>
+    </nav>
+
+    <section class="page-header text-center py-5" style="background-color: var(--color-cream);">
+        <h1 class="display-4 fw-bold custom-heading">About Me</h1>
+    </section>
+
+    <section id="personal-info" class="py-5">
+        <div class="container py-5">
+            <div class="row align-items-center">
+                
+                <div class="col-lg-5 mb-4 mb-lg-0 text-center">
+                    <div class="about-image-frame p-3">
+                        <img src="img/foto6.jpeg" alt="Abdur Rohim" class="img-fluid rounded shadow">
+                    </div>
+                </div>
+
+                <div class="col-lg-7">
+                    <h2 class="fw-bold mb-4">Abdur Rohim</h2>
+                    <p class="lead">
+                        saya Abdur Rohim, lahir di Solok pada tanggal 11 Juni 2006. Saat ini, saya sedang menjalani studi sebagai seorang mahasiswa dengan semangat untuk terus berkembang. 
+                    </p>
+                    <p class="text-secondary">
+                        Di waktu luang, saya suka berenang untuk menjaga kebugaran tubuh, dan saya juga sangat menikmati waktu untuk belajar, karena saya percaya bahwa ilmu adalah kunci untuk mencapai tujuan hidup.
+                    </p>
+                    
+                    <h5 class="mt-4 fw-bold custom-heading-blue">Visi & Misi</h5>
+                    <p class="text-secondary small">"Menjadi pribadi yang sukses, berintegritas, dan bermanfaat bagi orang lain, dengan terus berkembang dalam ilmu, kedewasaan, dan ketulusan hati".</p>
+
+                    <div class="social-icons pt-3">
+                        <a href="#" class="text-dark me-3"><i class="fab fa-linkedin-in fa-lg"></i></a>
+                        <a href="#" class="text-dark me-3"><i class="fab fa-twitter fa-lg"></i></a>
+                        <a href="#" class="text-dark"><i class="fab fa-github fa-lg"></i></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="timeline" class="py-5 bg-light">
+        <div class="container py-5">
+            <h2 class="text-center fw-bold mb-5">Perjalanan Karier dan Pendidikan</h2>
+
+            <div class="accordion" id="portfolioAccordion">
+                
+                <div class="accordion-item custom-accordion-item">
+                    <h2 class="accordion-header">
+                        <button class="accordion-button fw-bold" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                            <i class="fas fa-graduation-cap me-3 custom-icon"></i> Pendidikan
+                        </button>
+                    </h2>
+                    <div id="collapseOne" class="accordion-collapse collapse show" data-bs-parent="#portfolioAccordion">
+                        <div class="accordion-body">
+                            <ul class="timeline-list">
+                                <li><strong>2013 - 2019:</strong> MIN Kota Solok</li>
+                                <li><strong>2019 - 2021:</strong> SMPN2 Kota Solok</li>
+                                <li><strong>2021 - 2024:</strong> MAS Ar-Risalah</li>
+                                <li><strong>2024 - Sekarang:</strong> Universitas Andalas</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="accordion-item custom-accordion-item">
+                    <h2 class="accordion-header">
+                        <button class="accordion-button collapsed fw-bold" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                            <i class="fas fa-briefcase me-3 custom-icon"></i> Kegiatan
+                        </button>
+                    </h2>
+                    <div id="collapseTwo" class="accordion-collapse collapse" data-bs-parent="#portfolioAccordion">
+                        <div class="accordion-body">
+                            <ul class="timeline-list">
+                                <li><strong>2024</strong> Staff Festika</li>
+                                <li><strong>2025:</strong> Staff HRD</li>
+                                <li><strong>2025:</strong> Staff LKMM-TD</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="accordion-item custom-accordion-item">
+                    <h2 class="accordion-header">
+                        <button class="accordion-button collapsed fw-bold" type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+                            <i class="fas fa-trophy me-3 custom-icon"></i> Prestasi
+                        </button>
+                    </h2>
+                    <div id="collapseThree" class="accordion-collapse collapse" data-bs-parent="#portfolioAccordion">
+                        <div class="accordion-body">
+                            <ul class="timeline-list">
+                                <li><strong>2023:</strong> Juara 1 O2SN Renang Tingkat Kota</li>
+                                <li><strong>2022:</strong> Juara 3 O2SN Renang Tingkat Provinsi</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                </div>
+        </div>
+    </section>
+
+    <section id="skills" class="py-5">
+        <div class="container py-5">
+            <h2 class="text-center fw-bold mb-5">Skill</h2>
+
+            <div class="row row-cols-2 row-cols-md-3 row-cols-lg-4 g-4 text-center">
+                <div class="col">
+                    <div class="skill-item p-4 custom-skill-item">
+                        <i class="fas fa-code fa-2x mb-2 custom-icon"></i>
+                        <h6 class="fw-bold">HTML, CSS, Bootstrap</h6>
+                    </div>
+                </div>
+                
+                <div class="col">
+                    <div class="skill-item p-4 custom-skill-item">
+                        <i class="fas fa-comments fa-2x mb-2 custom-icon"></i>
+                        <h6 class="fw-bold">Communication & Leadership</h6>
+                    </div>
+                </div>
+                
+                <div class="col">
+                    <div class="skill-item p-4 custom-skill-item">
+                        <i class="fas fa-bolt fa-2x mb-2 custom-icon"></i>
+                        <h6 class="fw-bold">Problem Solving</h6>
+                    </div>
+                </div>
+
+                <div class="col">
+                    <div class="skill-item p-4 custom-skill-item">
+                        <i class="fas fa-globe fa-2x mb-2 custom-icon"></i>
+                        <h6 class="fw-bold">Multilingual (English, Bahasa)</h6>
+                    </div>
+                </div>
+                
+            </div>
+        </div>
+    </section>
+
+    <footer id="contact" class="bg-dark text-white pt-5 pb-3">
+        <div class="container">
+            <div class="row">
+                
+                <div class="col-md-4 mb-4">
+                    <h5 class="fw-bold text-white mb-3">Abdur Rohim</h5>
+                    <p class="text-secondary small">
+                        Mahasiswa Teknik Informatika yang bersemangat dalam pengembangan web dan kepemimpinan tim.
+                        Siap berkontribusi dalam proyek yang menantang.
+                    </p>
+                </div>
+
+                <div class="col-md-3 offset-md-1 mb-4">
+                    <h5 class="fw-bold text-white mb-3">Quick Links</h5>
+                    <ul class="list-unstyled">
+                        <li><a href="index.html" class="text-secondary text-decoration-none">Home</a></li>
+                        <li><a href="about.html" class="text-secondary text-decoration-none">About</a></li>
+                        <li><a href="portfolio.html" class="text-secondary text-decoration-none">Portfolio</a></li>
+                        <li><a href="report.html" class="text-secondary text-decoration-none">Report</a></li>
+                        <li><a href="contact.html" class="text-secondary text-decoration-none">Contact</a></li>
+                    </ul>
+                </div>
+
+                <div class="col-md-4 mb-4">
+                    <h5 class="fw-bold text-white mb-3">Connect</h5>
+                    <div class="social-icons pt-1">
+                        <a href="#" class="text-white me-3"><i class="fab fa-facebook-f fa-lg"></i></a>
+                        <a href="#" class="text-white me-3"><i class="fab fa-twitter fa-lg"></i></a>
+                        <a href="#" class="text-white me-3"><i class="fab fa-linkedin-in fa-lg"></i></a>
+                        <a href="#" class="text-white"><i class="fab fa-instagram fa-lg"></i></a>
+                    </div>
+                </div>
+            </div>
+            
+            <hr class="text-secondary">
+
+            <div class="text-center pt-2">
+                <p class="mb-0 text-secondary">&copy; 2025 Abdur Rohim. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

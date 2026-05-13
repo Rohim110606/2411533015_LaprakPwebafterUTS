@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Abdur Rohim - Contact</title>
+    
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+    
+    <link rel="stylesheet" href="style.css"> 
+
+</head>
+<body>
+
+    <nav class="navbar navbar-expand-lg navbar-light fixed-top custom-navbar-fixed">
+        <div class="container">
+            <a class="navbar-brand" href="index.html">mydonatcandy</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+                    <li class="nav-item"><a class="nav-link" href="about.html">About</a></li>
+                    <li class="nav-item"><a class="nav-link" href="portfolio.html">Portfolio</a></li>
+                    <li class="nav-item"><a class="nav-link" href="project.html">Project</a></li>
+                    <li class="nav-item"><a class="nav-link active" aria-current="page" href="contact.html">Contact</a></li>
+                </ul>
+                <form class="d-flex ms-3" role="search">
+                    <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+                    <button class="btn btn-outline-secondary" type="submit"><i class="fas fa-search"></i></button>
+                </form>
+            </div>
+        </div>
+    </nav>
+    <main>
+        <section class="page-header text-center">
+            <div class="container">
+                <h1 class="display-4 fw-bold custom-heading-blue">Contact</h1>
+            </div>
+        </section>
+
+        <section class="py-5">
+            <div class="container">
+                <div class="row g-4">
+                    
+                    <div class="col-lg-7">
+                        <div class="p-4 border rounded shadow-sm bg-white">
+                            <h3 class="mb-4 custom-heading-blue">Kirim Pesan Langsung</h3>
+                            
+                            <div id="successAlert" class="alert alert-success alert-dismissible fade show d-none" role="alert">
+                                <strong>Success!</strong> Pesan Anda telah terkirim. Saya akan segera menghubungi Anda.
+                                <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                            </div>
+                            
+                            <div id="errorAlert" class="alert alert-danger alert-dismissible fade show d-none" role="alert">
+                                <strong>Error!</strong> Gagal mengirim pesan. Mohon periksa kembali input Anda.
+                                <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                            </div>
+
+                            <form id="contactForm" class="custom-contact-form" novalidate>
+                                
+                                <div class="mb-3">
+                                    <label for="name" class="form-label">Nama Lengkap*</label>
+                                    <input type="text" class="form-control" id="name" required>
+                                    <div class="invalid-feedback">Nama wajib diisi.</div>
+                                </div>
+                                
+                                <div class="mb-3">
+                                    <label for="email" class="form-label">Email*</label>
+                                    <input type="email" class="form-control" id="email" required>
+                                    <div class="invalid-feedback">Email harus berupa format yang valid.</div>
+                                </div>
+
+                                <div class="mb-3">
+                                    <label for="phone" class="form-label">Nomor Telepon</label>
+                                    <input type="tel" class="form-control" id="phone" pattern="[0-9]{9,}" title="Masukkan setidaknya 9 digit angka">
+                                </div>
+
+                                <div class="mb-3">
+                                    <label for="subject" class="form-label">Subjek*</label>
+                                    <select class="form-select" id="subject" required>
+                                        <option value="" disabled selected>Pilih Subjek...</option>
+                                        <option value="collaboration">Ajakan Kolaborasi Proyek</option>
+                                        <option value="internship">Lowongan/Magang</option>
+                                        <option value="question">Pertanyaan Umum</option>
+                                        <option value="other">Lain-lain</option>
+                                    </select>
+                                    <div class="invalid-feedback">Subjek wajib dipilih.</div>
+                                </div>
+
+                                <div class="mb-3">
+                                    <label for="message" class="form-label">Pesan Anda*</label>
+                                    <textarea class="form-control" id="message" rows="4" required></textarea>
+                                    <div class="invalid-feedback">Pesan wajib diisi.</div>
+                                </div>
+
+                                <div class="mb-3 form-check">
+                                    <input type="checkbox" class="form-check-input" id="terms" required>
+                                    <label class="form-check-label" for="terms">Saya setuju dengan syarat dan ketentuan.</label>
+                                    <div class="invalid-feedback">Anda harus menyetujui syarat dan ketentuan.</div>
+                                </div>
+                                
+                                <button type="submit" class="btn custom-btn-blue w-100" id="submitButton">Kirim Pesan</button>
+                            </form>
+                        </div>
+                    </div>
+
+                    <div class="col-lg-5">
+                        <div class="contact-info-card">
+                            <h4 class="mb-4">Informasi Kontak</h4>
+                            
+                            <div class="icon-item">
+                                <i class="fas fa-map-marker-alt me-3"></i>
+                                <p class="mb-0">Kota Padang, Sumatera Barat</p>
+                            </div>
+
+                            <div class="icon-item">
+                                <i class="fas fa-phone-alt me-3"></i>
+                                <p class="mb-0">+62 812-6705-3088</p>
+                            </div>
+
+                            <div class="icon-item">
+                                <i class="fas fa-envelope me-3"></i>
+                                <p class="mb-0">abdurrohim2715@gmail.com</p>
+                            </div>
+
+                            <hr class="my-4">
+
+                            <h4 class="mb-3">Sosial Media</h4>
+                            <div class="icon-item">
+    <i class="fab fa-instagram me-3"></i>
+    <a href="https://www.instagram.com/nama_akun_ig_anda" class="text-muted" target="_blank">@_hhiiim</a>
+</div>
+
+<div class="icon-item">
+    <i class="fab fa-twitter me-3"></i>
+    <a href="https://twitter.com/nama_akun_twitter_anda" class="text-muted" target="_blank">@_hhiiim</a>
+</div>
+
+<div class="icon-item">
+    <i class="fab fa-github me-3"></i>
+    <a href="https://github.com/nama_akun_github_anda" class="text-muted" target="_blank">Abdur Rohim</a>
+</div>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+       <section class="pb-5">
+    <div class="container">
+        <h3 class="mb-3 custom-heading-blue">Lokasi Saya</h3>
+        <div class="custom-map-container">
+            <iframe 
+                src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d15034.566597950934!2d100.45297064443086!3d-0.9207829013871547!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x4d8c7470ebcd263%3A0x39a01bade5cf824c!2sKost%20Putra%20ReNa!5e0!3m2!1sid!2sid!4v1765519544480!5m2!1sid!2sid" 
+                allowfullscreen="" 
+                loading="lazy" 
+                referrerpolicy="no-referrer-when-downgrade">
+            </iframe>
+        </div>
+    </div>
+</section>
+        
+    </main>
+
+   <footer id="contact" class="bg-dark text-white pt-5 pb-3">
+        <div class="container">
+            <div class="row">
+                
+                <div class="col-md-4 mb-4">
+                    <h5 class="fw-bold text-white mb-3">Abdur Rohim</h5>
+                    <p class="text-secondary small">
+                        Mahasiswa Informatika yang bersemangat dalam pengembangan web dan kepemimpinan tim.
+                        Siap berkontribusi dalam kegiatan yang menantang.
+                    </p>
+                </div>
+
+                <div class="col-md-3 offset-md-1 mb-4">
+                    <h5 class="fw-bold text-white mb-3">Quick Links</h5>
+                    <ul class="list-unstyled">
+                        <li><a href="#home" class="text-secondary text-decoration-none">Home</a></li>
+                        <li><a href="about.html" class="text-secondary text-decoration-none">About</a></li>
+                        <li><a href="portfolio.html" class="text-secondary text-decoration-none">Portfolio</a></li>
+                        <li><a href="report.html" class="text-secondary text-decoration-none">Report</a></li>
+                        <li><a href="contact.html" class="text-secondary text-decoration-none">Contact</a></li>
+                    </ul>
+                </div>
+
+                <div class="col-md-4 mb-4">
+                    <h5 class="fw-bold text-white mb-3">Connect</h5>
+                    <div class="social-icons pt-1">
+                        <a href="#" class="text-white me-3"><i class="fab fa-facebook-f fa-lg"></i></a>
+                        <a href="#" class="text-white me-3"><i class="fab fa-twitter fa-lg"></i></a>
+                        <a href="#" class="text-white me-3"><i class="fab fa-linkedin-in fa-lg"></i></a>
+                        <a href="#" class="text-white"><i class="fab fa-instagram fa-lg"></i></a>
+                    </div>
+                </div>
+            </div>
+            
+            <hr class="text-secondary">
+
+            <div class="text-center pt-2">
+                <p class="mb-0 text-secondary">&copy; 2025 Abdur Rohim. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            const form = document.getElementById('contactForm');
+            const successAlert = document.getElementById('successAlert');
+            const errorAlert = document.getElementById('errorAlert');
+            const submitButton = document.getElementById('submitButton');
+
+            form.addEventListener('submit', function (event) {
+                event.preventDefault();
+                event.stopPropagation();
+                
+                successAlert.classList.add('d-none');
+                errorAlert.classList.add('d-none');
+
+                if (form.checkValidity() === false) {
+                    form.classList.add('was-validated');
+                    submitButton.disabled = false;
+                    errorAlert.classList.remove('d-none');
+                } else {
+                    submitButton.disabled = true;
+                    
+                    setTimeout(() => {
+                        form.classList.remove('was-validated');
+                        form.reset();
+                        successAlert.classList.remove('d-none');
+                        submitButton.disabled = false;
+                    }, 1500);
+                }
+            }, false);
+        });
+    </script>
+</body>
+</html>

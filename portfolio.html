@@ -1,0 +1,389 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Abdur Rohim - Portfolio</title>
+    
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+    
+    <link rel="stylesheet" href="style.css"> 
+
+</head>
+<body>
+
+    <nav class="navbar navbar-expand-lg navbar-light fixed-top custom-navbar-fixed">
+        <div class="container">
+            <a class="navbar-brand fw-bold" href="index.html">mydonatcandy</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+                    <li class="nav-item"><a class="nav-link" href="about.html">About</a></li>
+                    <li class="nav-item"><a class="nav-link active" aria-current="page" href="portfolio.html">Portfolio</a></li>
+                    <li class="nav-item"><a class="nav-link" href="project.html">Project</a></li>
+                    <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
+                </ul>
+                <form class="d-flex ms-3" role="search">
+                    <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+                    <button class="btn btn-outline-secondary" type="submit"><i class="fas fa-search"></i></button>
+                </form>
+            </div>
+        </div>
+    </nav>
+    <main>
+        <section class="page-header text-center py-5" style="background-color: var(--color-cream);">
+            <div class="container">
+                <h1 class="display-4 fw-bold custom-heading-blue">My Portfolio</h1>
+                <p class="lead text-muted">Berikut Beberapa Kegiatan Yang Saya Lakukan</p>
+            </div>
+        </section>
+
+        <section class="py-5">
+            <div class="container">
+                
+                <div class="d-flex justify-content-center flex-wrap mb-5">
+                    <button class="btn custom-btn-blue m-2 filter-btn active" data-filter="all">All</button>
+                    <button class="btn custom-btn-outline m-2 filter-btn" data-filter="praktikum">Praktikum</button>
+                    <button class="btn custom-btn-outline m-2 filter-btn" data-filter="sosial">Sosial</button>
+                    <button class="btn custom-btn-outline m-2 filter-btn" data-filter="himpunan">Himpunan</button>
+                </div>
+                <div class="row row-cols-1 row-cols-md-2 row-cols-lg-3 g-4" id="portfolio-grid">
+                    
+                    <div class="col portfolio-item" data-category="praktikum">
+                        <div class="card h-100 custom-portfolio-card">
+                            <img src="img/foto7.jpeg" class="card-img-top" alt="CRUD PHP">
+                            <div class="card-body">
+                                <h5 class="card-title text-center text-md-start">Sistem Manajemen RS</h5>
+                                <p class="card-text small">Konsep OOP & Membuat CRUD sederhana.</p>
+                                <div class="mt-auto d-flex justify-content-between align-items-center">
+                                    <span class="badge custom-badge-web">Web Development</span>
+                                    <a href="#" class="btn btn-sm custom-btn-blue" data-bs-toggle="modal" data-bs-target="#projectModal1">Lihat</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col portfolio-item" data-category="praktikum">
+                        <div class="card h-100 custom-portfolio-card">
+                            <img src="img/foto8.png" class="card-img-top" alt="Laravel Auth">
+                            <div class="card-body">
+                                <h5 class="card-title text-center text-md-start">Download Manager App</h5>
+                                <p class="card-text small">Laravel Authentication, CRUD Multi Level User.</p>
+                                <div class="mt-auto d-flex justify-content-between align-items-center">
+                                    <span class="badge custom-badge-web">Web Development</span>
+                                    <a href="#" class="btn btn-sm custom-btn-blue" data-bs-toggle="modal" data-bs-target="#projectModal2">Lihat</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="col portfolio-item" data-category="sosial">
+                        <div class="card h-100 custom-portfolio-card">
+                            <img src="img/foto4.jpeg" class="card-img-top" alt="Bakti Sosial">
+                            <div class="card-body">
+                                <h5 class="card-title text-center text-md-start">Bakti Jurusan Informatika</h5>
+                                <p class="text-muted mb-2"> Mahasiswa Informatika angkatan 2025</p>
+                                <p class="card-text small">Pengenalan Lingkungan FTI</p>
+                                <div class="mt-auto d-flex justify-content-between align-items-center">
+                                    <span class="badge custom-badge-data">Kegiatan Sosial</span>
+                                    <a href="#" class="btn btn-sm custom-btn-blue" data-bs-toggle="modal" data-bs-target="#projectModal3">Lihat</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col portfolio-item" data-category="himpunan">
+                        <div class="card h-100 custom-portfolio-card">
+                            <img src="img/foto3.jpeg" class="card-img-top" alt="Rapat Kerja Himpunan">
+                            <div class="card-body">
+                                <h5 class="card-title text-center text-md-start">Upgrading HMIF</h5>
+                                <p class="text-muted mb-2">Internal Organisasi</p>
+                                <p class="card-text small">Pengembangan SDM</p>
+                                <div class="mt-auto d-flex justify-content-between align-items-center">
+                                    <span class="badge custom-badge-pm">Himpunan</span>
+                                    <a href="#" class="btn btn-sm custom-btn-blue" data-bs-toggle="modal" data-bs-target="#projectModal4">Lihat</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="col portfolio-item" data-category="himpunan">
+                        <div class="card h-100 custom-portfolio-card">
+                            <img src="img/foto9.jpeg" class="card-img-top" alt="Laravel Relationship">
+                            <div class="card-body">
+                                <h5 class="card-title text-center text-md-start">Rapat Global</h5>
+                                <p class="text-muted mb-2">Kegiatan Wajib Himpunan</p>
+                                <div class="mt-auto d-flex justify-content-between align-items-center">
+                                    <span class="badge custom-badge-web">Himpunan</span>
+                                    <a href="#" class="btn btn-sm custom-btn-blue" data-bs-toggle="modal" data-bs-target="#projectModal5">Lihat</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col portfolio-item" data-category="praktikum">
+                        <div class="card h-100 custom-portfolio-card">
+                            <img src="img/foto10.jpeg" class="card-img-top" alt="API and RESTful API">
+                            <div class="card-body">
+                                <h5 class="card-title text-center text-md-start">Laundry Apps</h5>
+                                <div class="mt-auto d-flex justify-content-between align-items-center">
+                                    <span class="badge custom-badge-web">Web Development</span>
+                                    <a href="#" class="btn btn-sm custom-btn-blue" data-bs-toggle="modal" data-bs-target="#projectModal6">Lihat</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+        
+    </main>
+
+    <div class="modal fade" id="projectModal1" tabindex="-1" aria-labelledby="projectModal1Label" aria-hidden="true">
+        <div class="modal-dialog modal-xl">
+            <div class="modal-content custom-carousel-modal">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="projectModal1Label">Detail Praktikum 6: CRUD PHP - Konsep OOP</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <div id="carouselModal1" class="carousel slide mb-4" data-bs-ride="carousel">
+                        <div class="carousel-inner">
+                            <div class="carousel-item active">
+                                <img src="img/foto7.jpeg" class="d-block w-100" alt="Sistem Manajemen RS Screenshot">
+                            </div>
+                            </div>
+                        <button class="carousel-control-prev" type="button" data-bs-target="#carouselModal1" data-bs-slide="prev">
+                            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                            <span class="visually-hidden">Previous</span>
+                        </button>
+                        <button class="carousel-control-next" type="button" data-bs-target="#carouselModal1" data-bs-slide="next">
+                            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                            <span class="visually-hidden">Next</span>
+                        </button>
+                    </div>
+
+                    <h4 class="custom-heading-blue">Tujuan Praktikum & Konsep</h4>
+                    <p>Praktikum ini bertujuan untuk memahami dan menerapkan Konsep Dasar Object-Oriented Programming (OOP) dalam pengembangan aplikasi web menggunakan PHP. Fokus utama adalah pada pembuatan fitur CRUD (Create, Read, Update, Delete) yang terstruktur dan modular.</p>
+                    <h4 class="custom-heading-blue mt-4">Hasil & Pembelajaran</h4>
+                    <p>Berhasil membuat sistem CRUD sederhana yang stabil. Pembelajaran utama adalah bagaimana struktur OOP membantu dalam pemeliharaan kode dan skalabilitas proyek kecil.</p>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn custom-btn-outline" data-bs-dismiss="modal">Tutup</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal fade" id="projectModal2" tabindex="-1" aria-labelledby="projectModal2Label" aria-hidden="true">
+        <div class="modal-dialog modal-xl">
+            <div class="modal-content custom-carousel-modal">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="projectModal2Label">Detail Praktikum : Mebuat Aplikasi</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <div id="carouselModal2" class="carousel slide mb-4" data-bs-ride="carousel">
+                        <div class="carousel-inner">
+                            <div class="carousel-item active">
+                                <img src="img/foto8.png" class="d-block w-100" alt="Download Manager App Screenshot">
+                            </div>
+                            </div>
+                    </div>
+                    <h4 class="custom-heading-blue">Tujuan Praktikum </h4>
+                    <p>Mahasiswa mampu membuat aplikasi dari GUI dan di implementasikan yang sudah di pelajari</p>
+                    <h4 class="custom-heading-blue mt-4">Hasil & Pembelajaran</h4>
+                    <p>Mahasiwa berhasil dan mendapatkan nilai dan pemahaman yang bagus</p>
+                </div>
+                <div class="modal-footer">
+                    <a href="#" class="btn custom-btn-blue" target="_blank">Lihat Dokumentasi <i class="fas fa-file-pdf"></i></a>
+                    <button type="button" class="btn custom-btn-outline" data-bs-dismiss="modal">Tutup</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal fade" id="projectModal3" tabindex="-1" aria-labelledby="projectModal3Label" aria-hidden="true">
+        <div class="modal-dialog modal-xl">
+            <div class="modal-content custom-carousel-modal">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="projectModal3Label">Detail Kegiatan: Bakti Jurusan</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <div id="carouselModal3" class="carousel slide mb-4" data-bs-ride="carousel">
+                        <div class="carousel-inner">
+                             <div class="carousel-item active">
+                                <img src="img/foto4.jpeg" class="d-block w-100" alt="Bakti Jurusan Foto">
+                            </div>
+                        </div>
+                    </div>
+                    <h4 class="custom-heading-blue">Latar Belakang & Tujuan</h4>
+                    <p>Kegiatan ini diselenggarakan sebagai bentuk masa pengenalan mahasiswa baru. Tujuannya adalah untuk memberikan pengenalan kepada mahasiwa baru</p>
+                    <h4 class="custom-heading-blue mt-4">Hasil & Pembelajaran</h4>
+                    <p>Mahasiswa baru berhasil mengenal lingkungan fakultas dan jurusan.</p>
+                </div>
+                 <div class="modal-footer">
+                    <button type="button" class="btn custom-btn-outline" data-bs-dismiss="modal">Tutup</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <div class="modal fade" id="projectModal4" tabindex="-1" aria-labelledby="projectModal4Label" aria-hidden="true">
+        <div class="modal-dialog modal-xl">
+            <div class="modal-content custom-carousel-modal">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="projectModal4Label">Detail Kegiatan: Upgrading Hmpunan</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <div id="carouselModal4" class="carousel slide mb-4" data-bs-ride="carousel">
+                        <div class="carousel-inner">
+                            <div class="carousel-item active">
+                                <img src="img/foto3.jpeg" class="d-block w-100" alt="Upgrading HMIF Foto">
+                            </div>
+                        </div>
+                    </div>
+                    <h4 class="custom-heading-blue">Tujuan Kegiatan</h4>
+                    <p>Pemberian Materi terkait Pengelolaan diri dan Organisasi</p>
+                    <h4 class="custom-heading-blue mt-4">Hasil & Pembelajaran</h4>
+                    <p>Pengurus harus mampu membagi skala prioritas dari kegiatan yang ada </p>
+                </div>
+                 <div class="modal-footer">
+                    <button type="button" class="btn custom-btn-outline" data-bs-dismiss="modal">Tutup</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <div class="modal fade" id="projectModal5" tabindex="-1" aria-labelledby="projectModal5Label" aria-hidden="true">
+        <div class="modal-dialog modal-xl">
+            <div class="modal-content custom-carousel-modal">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="projectModal5Label">Detail Kegiatan : Rapat Wajib Pengurus HMIF</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <div id="carouselModal5" class="carousel slide mb-4" data-bs-ride="carousel">
+                        <div class="carousel-inner">
+                            <div class="carousel-item active">
+                                <img src="img/foto9.jpeg" class="d-block w-100" alt="Rapat Global Foto">
+                            </div>
+                        </div>
+                    </div>
+                    <h4 class="custom-heading-blue">Tujuan Kegiatan</h4>
+                    <p>Mendiskusikan hal penting Untuk kemajuan Himpunan</p>
+                    <h4 class="custom-heading-blue mt-4">Hasil & Pembelajaran</h4>
+                    <p>Berhasil Mendiskusikan dan membahas hal penting dari himpunan.</p>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn custom-btn-outline" data-bs-dismiss="modal">Tutup</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal fade" id="projectModal6" tabindex="-1" aria-labelledby="projectModal6Label" aria-hidden="true">
+        <div class="modal-dialog modal-xl">
+            <div class="modal-content custom-carousel-modal">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="projectModal6Label">Detail Praktikum 11: Aplikasi Laundry</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <div id="carouselModal6" class="carousel slide mb-4" data-bs-ride="carousel">
+                        <div class="carousel-inner">
+                            <div class="carousel-item active">
+                                <img src="img/foto10.jpeg" class="d-block w-100" alt="Laundry Apps Screenshot">
+                            </div>
+                        </div>
+                    </div>
+                    <h4 class="custom-heading-blue">Tujuan Praktikum & Konsep</h4>
+                    <p>Memahami konsep dasar Proses Pembuatan GUI dan implementasi database.</p>
+                    <h4 class="custom-heading-blue mt-4">Hasil & Pembelajaran</h4>
+                    <p>Berhasil membuat Aplikasi GUI dengan nama Laundry Apps</p>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn custom-btn-outline" data-bs-dismiss="modal">Tutup</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <footer id="contact" class="bg-dark text-white pt-5 pb-3">
+        <div class="container">
+            <div class="row">
+                
+                <div class="col-md-4 mb-4">
+                    <h5 class="fw-bold text-white mb-3">Abdur Rohim</h5>
+                    <p class="text-secondary small">
+                        Mahasiswa Informatika yang bersemangat dalam pengembangan web dan kepemimpinan tim.
+                        Siap berkontribusi dalam kegiatan yang menantang.
+                    </p>
+                </div>
+
+                <div class="col-md-3 offset-md-1 mb-4">
+                    <h5 class="fw-bold text-white mb-3">Quick Links</h5>
+                    <ul class="list-unstyled">
+                        <li><a href="index.html" class="text-secondary text-decoration-none">Home</a></li>
+                        <li><a href="about.html" class="text-secondary text-decoration-none">About</a></li>
+                        <li><a href="portfolio.html" class="text-secondary text-decoration-none">Portfolio</a></li>
+                        <li><a href="report.html" class="text-secondary text-decoration-none">Report</a></li>
+                        <li><a href="contact.html" class="text-secondary text-decoration-none">Contact</a></li>
+                    </ul>
+                </div>
+
+                <div class="col-md-4 mb-4">
+                    <h5 class="fw-bold text-white mb-3">Connect</h5>
+                    <div class="social-icons pt-1">
+                        <a href="#" class="text-white me-3"><i class="fab fa-facebook-f fa-lg"></i></a>
+                        <a href="#" class="text-white me-3"><i class="fab fa-twitter fa-lg"></i></a>
+                        <a href="#" class="text-white me-3"><i class="fab fa-linkedin-in fa-lg"></i></a>
+                        <a href="#" class="text-white"><i class="fab fa-instagram fa-lg"></i></a>
+                    </div>
+                </div>
+            </div>
+            
+            <hr class="text-secondary">
+
+            <div class="text-center pt-2">
+                <p class="mb-0 text-secondary">&copy; 2025 Abdur Rohim. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const filterButtons = document.querySelectorAll('.filter-btn');
+            const portfolioItems = document.querySelectorAll('.portfolio-item');
+
+            filterButtons.forEach(button => {
+                button.addEventListener('click', function() {
+                    filterButtons.forEach(btn => btn.classList.remove('active', 'custom-btn-blue'));
+                    filterButtons.forEach(btn => btn.classList.add('custom-btn-outline'));
+                    this.classList.remove('custom-btn-outline');
+                    this.classList.add('active', 'custom-btn-blue');
+
+                    const filterValue = this.getAttribute('data-filter');
+
+                    portfolioItems.forEach(item => {
+                        if (filterValue === 'all' || item.getAttribute('data-category') === filterValue) {
+                            item.style.display = 'block';
+                        } else {
+                            item.style.display = 'none';
+                        }
+                    });
+                });
+            });
+        });
+    </script>
+</body>
+</html>
