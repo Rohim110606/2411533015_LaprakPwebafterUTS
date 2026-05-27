@@ -204,10 +204,10 @@
 
                             <div class="card-body d-flex flex-column">
                                 <span class="badge custom-badge-web align-self-start mb-3">
-                                    Pemrograman Web
+                                    Pemograman Web
                                 </span>
 
-                                <h5 class="card-title">Laporan Praktikum Pemrograman Web Laravel</h5>
+                                <h5 class="card-title">Install awal laravel</h5>
 
                                 <p class="card-text small text-muted">
                                     Laporan praktikum pengembangan website menggunakan framework Laravel.
@@ -215,6 +215,33 @@
 
                                 <div class="mt-auto">
                                     <button class="btn btn-sm custom-btn-blue w-100 btn-baca-laporan" type="button" data-report="laravel-web">
+                                        Baca Laporan
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Card 2 -->
+                    <div class="col report-item" data-category="pemograman-web">
+                        <div class="card h-100 custom-portfolio-card custom-report-card">
+                            <div class="report-icon-box">
+                                <i class="fa-brands fa-laravel"></i>
+                            </div>
+
+                            <div class="card-body d-flex flex-column">
+                                <span class="badge custom-badge-web align-self-start mb-3">
+                                    Pemograman Web
+                                </span>
+
+                                <h5 class="card-title">Laravel Relationship</h5>
+
+                                <p class="card-text small text-muted">
+                                    Laporan praktikum pengembangan website menggunakan framework Laravel.
+                                </p>
+
+                                <div class="mt-auto">
+                                    <button class="btn btn-sm custom-btn-blue w-100 btn-baca-laporan" type="button" data-report="laravel-relationship">
                                         Baca Laporan
                                     </button>
                                 </div>
@@ -232,7 +259,7 @@
                             <h3 id="detail-title" class="fw-bold custom-heading-blue mb-4"></h3>
                             <div id="detail-content" class="report-detail-content"></div>
                             <div class="d-flex justify-content-end gap-2 mt-4">
-                                <a class="btn custom-btn-outline px-4" href="https://github.com/Rohim110606/2411533015_LaprakPwebafterUTS" target="_blank" rel="noopener noreferrer">
+                                <a class="btn custom-btn-outline px-4" href="https://github.com/Rohim110606/PraktikumPwebSemester4" target="_blank" rel="noopener noreferrer">
                                     <i class="fab fa-github me-2"></i>Repository
                                 </a>
                                 <button class="btn custom-btn-blue px-4" id="finishReadingButton" type="button">
@@ -480,6 +507,211 @@
                         </figure>
                     `
                 }
+            };
+
+            const gambarLaporan = (nomor) => `
+                <figure class="report-image">
+                    <img src="img/prak8.${nomor}.png" alt="Prak8.${nomor}">
+                </figure>
+            `;
+            const gambarLaporanRange = (awal, akhir) => {
+                return Array.from({ length: akhir - awal + 1 }, function (_, index) {
+                    return gambarLaporan(awal + index);
+                }).join("");
+            };
+
+            laporanData["laravel-relationship"] = {
+                title: "",
+                content: `
+                    <h4 class="custom-heading-blue">A. PENDAHULUAN</h4>
+                    <p>
+                        Pada Praktikum kali ini kita akan membahas implementasi relationship pada
+                        framework Laravel sebagai salah satu konsep fundamental dalam pengembangan aplikasi
+                        web berbasis basis data. Pemahaman mengenai relasi antarentitas menjadi aspek penting
+                        dalam proses perancangan sistem informasi yang terstruktur, efisien, dan mudah
+                        dikembangkan maupun dipelihara di masa mendatang. Pada praktikum ini, kita
+                        menggunakan studi kasus berupa sistem akademik sederhana yang melibatkan tiga
+                        entitas utama, yaitu mahasiswa,jurusan, dan mata kuliah, yang saling terhubung dalam
+                        sebuah basis data relasional.
+                    </p>
+                    <p>
+                        Dalam proses pemodelan sistem akademik tersebut, kita mengimplementasikan
+                        beberapa jenis relasi yang umum digunakan dalam pengembangan aplikasi berbasis
+                        database. Relasi antara entitas mahasiswa dan jurusan menerapkan konsep Many-to-One,
+                        di mana setiap mahasiswa hanya terdaftar pada satu jurusan, sedangkan satu jurusan
+                        dapat memiliki banyak mahasiswa. Konsep tersebut juga dikenal sebagai relasi One-to-Many
+                        apabila dilihat dari sisi entitas jurusan terhadap mahasiswa. Implementasi relasi ini
+                        bertujuan untuk menjaga konsistensi data serta mempermudah pengelolaan informasi
+                        akademik dalam sistem.
+                    </p>
+                    <p>
+                        Selain itu, kita juga menerapkan relasi Many-to-Many antara entitas mahasiswa dan
+                        mata kuliah. Pada relasi ini, seorang mahasiswa dapat mengambil lebih dari satu mata
+                        kuliah, dan di sisi lain satu mata kuliah dapat diikuti oleh banyak mahasiswa. Secara
+                        teknis, implementasi relasi tersebut dilakukan dengan memanfaatkan tabel pivot sebagai
+                        penghubung antarentitas di dalam database. Melalui penerapan relationship pada
+                        Laravel, kita dapat membangun struktur data yang lebih sistematis, fleksibel, dan sesuai
+                        dengan kebutuhan pengembangan sistem informasi akademik modern.
+                    </p>
+
+                    <h4 class="custom-heading-blue mt-4">B. TUJUAN</h4>
+                    <ol>
+                        <li>Mahasiswa diharapkan mampu memahami secara mendalam mengenai konsep relationship antar entitas di dalam framework Laravel</li>
+                        <li>Mahasiswa mampu menerapkan relasi One-to-Many dan Many-to-Many secara langsung pada basis data sistem akademik.</li>
+                        <li>Mahasiswa dapat menampilkan hasil data yang saling berelasi tersebut secara terstruktur pada antarmuka pengguna atau view.</li>
+                    </ol>
+
+                    <h4 class="custom-heading-blue mt-4">C. ISI</h4>
+                    <ol>
+                        <li>
+                            Pertama-tama yang harus kita buat adalah migrations untuk tabel major
+                            ${gambarLaporanRange(1, 1)}
+                            <p>Dengan isi kodingan dibawah ini,yang berfungsi untuk membuat tabel baru dengan nama majors yang ada di dalam database secara otomatis.</p>
+                            ${gambarLaporanRange(2, 3)}
+                        </li>
+                        <li>
+                            Setelah itu,kita perlu membuat tabel baru dengan nama Students
+                            ${gambarLaporanRange(4, 4)}
+                            <p>Dengan isi kodingan dibawah ini,yang berfungsi sama seperti sebelumnya adalah untuk membuat tabel baru dengan nama students secara otomatis,</p>
+                            ${gambarLaporanRange(5, 5)}
+                        </li>
+                        <li>
+                            Selanjutnya adalah perlu juga kita buat tabel baru dengan nama subjects
+                            ${gambarLaporanRange(6, 6)}
+                            <p>Dengan isi kodingan seperti dibawah ini yang berfungsi untuk membuat tabel baru pada database</p>
+                            ${gambarLaporanRange(7, 7)}
+                        </li>
+                        <li>
+                            Kemudian kita akan membuat kodingan guna untuk table pivot_migration tabel subject
+                            ${gambarLaporanRange(8, 8)}
+                            <p>Dengan isi kodingan dibawah ini,yang berfungsi sebagai penghubung antara data mahasiswa dan mata kuliah dengan menggunakan relasi many to many</p>
+                            ${gambarLaporanRange(9, 10)}
+                        </li>
+                        <li>
+                            Setelah itu kita perlu menampilkan tabel yang sudah kita buat sebelumnya dengan mengetikkan kodingan &ldquo;PHP artisan Migrate&rdquo;
+                            ${gambarLaporanRange(11, 11)}
+                        </li>
+                        <li>
+                            Selanjutnya kita perlu membuat model dengan relationship dengan nama model major
+                            ${gambarLaporanRange(12, 12)}
+                            <p>Dengan isi kodingan dibawah ini,yang berfungsi sebagai penghubung antara laravel dengan table majors yang ada pada database</p>
+                            ${gambarLaporanRange(13, 13)}
+                        </li>
+                        <li>
+                            Setelah itu,sama seperti sebelumnya,kita perlu membuat model dengan relationship dengan nama &ldquo;model Student&rdquo;
+                            ${gambarLaporanRange(14, 14)}
+                            <p>Dengan kodingan seperti dibawah ini:</p>
+                            ${gambarLaporanRange(15, 15)}
+                        </li>
+                        <li>
+                            Kemudian perlu juga kita buat model relationship dengan nama &ldquo;model subject&rdquo;
+                            ${gambarLaporanRange(16, 16)}
+                            <p>Dengan kodingan seperti di bawah ini:</p>
+                            ${gambarLaporanRange(17, 17)}
+                        </li>
+                        <li>
+                            Kemudian perlu juga kita buat seeder untuk data sampel dengan nama &ldquo;seeder major&rdquo;
+                            ${gambarLaporanRange(18, 18)}
+                            <p>Dengan isi kodingan seperti dibawah ini,yang berfungsi untuk mengisi data awal atau dummy data secara otomatis ke database.</p>
+                            ${gambarLaporanRange(19, 19)}
+                        </li>
+                        <li>
+                            Setelah itu,kita juga akan membuat seeder baru dengan nama &ldquo;seeder student&rdquo;.
+                            ${gambarLaporanRange(20, 20)}
+                            <p>Dengan isi kodingan seperti di bawah ini:</p>
+                            ${gambarLaporanRange(21, 21)}
+                        </li>
+                        <li>
+                            Selanjutnya kita masih perlu membuat seeder yang terakhir dengan nama &ldquo;Seeder Subject&rdquo;
+                            ${gambarLaporanRange(22, 22)}
+                            <p>Dengan isi kodingan seperti di bawah ini:</p>
+                            ${gambarLaporanRange(23, 23)}
+                        </li>
+                        <li>
+                            Kemudian kita perlu mengubah isi dari &ldquo;DataBase Seeder&rdquo; dengan isi nya seperti di bawah ini
+                            ${gambarLaporanRange(24, 24)}
+                        </li>
+                        <li>
+                            Selanjutnya kita perlu untuk menjalankan seeder yang sudah kita buat tadi
+                            ${gambarLaporanRange(25, 25)}
+                        </li>
+                        <li>
+                            Kemudian kita perlu membuat controller dengan nama &ldquo;Student Controller&rdquo;
+                            ${gambarLaporanRange(26, 26)}
+                            <p>Dengan kodingan seperti dibawah ini,yang berfungsi untuk menampilkan,menambahkan, serta mengubah data yang ada pada database.</p>
+                            ${gambarLaporanRange(27, 28)}
+                        </li>
+                        <li>
+                            Selanjutnya kita perlu membuat routes dengan kodingan seperti dibawah ini:
+                            ${gambarLaporanRange(29, 29)}
+                        </li>
+                        <li>
+                            Selanjutnya kita perlu membuat views baru dengan langkah seperti dibawah ini
+                            <ul>
+                                <li>Membuat Folder baru dengan nama &ldquo;Layouts&rdquo; di dalam folder Views.</li>
+                                <li>Membuat file baru dengan nama &ldquo;app.blade.php&rdquo; di dalam folder layouts</li>
+                                <li>Isi kodingan file &ldquo;app.blade.php&rdquo;</li>
+                            </ul>
+                            ${gambarLaporanRange(30, 30)}
+                            <ul>
+                                <li>Membuat Folder baru dengan nama &ldquo;Students&rdquo; di dalam folder &ldquo;Views&rdquo;</li>
+                                <li>Membuat file baru dengan nama &ldquo;index.blade.php&rdquo; didalam folder students</li>
+                                <li>Isi kodingan file &ldquo;Index.blade.php&rdquo;</li>
+                            </ul>
+                            ${gambarLaporanRange(31, 31)}
+                            <ul>
+                                <li>Membuat file baru dengan nama &ldquo;create.blade.php&rdquo; di dalam folder students</li>
+                                <li>Isi kodingan file &ldquo;Create.blade.php&rdquo;</li>
+                            </ul>
+                            ${gambarLaporanRange(32, 33)}
+                            <ul>
+                                <li>Membuat file baru dengan nama &ldquo;detail.blade.php&rdquo; didalam folder students</li>
+                                <li>Isi kodingan file &ldquo;detail.blade.php&rdquo;</li>
+                            </ul>
+                            ${gambarLaporanRange(34, 34)}
+                            <ul>
+                                <li>Membuat file baru dengan nama &ldquo;edit.blade.php&rdquo; didalam folder students</li>
+                                <li>Isi kodingan file &ldquo;edit.blade.php&rdquo;</li>
+                            </ul>
+                            ${gambarLaporanRange(35, 36)}
+                            <p>Dengan output akhir:</p>
+                            ${gambarLaporanRange(37, 37)}
+                        </li>
+                        <li>
+                            Selanjutnya kita akan mengerjakan tugas yang sudah diberikan sebelumnya
+                            <ul>
+                                <li>Buka file studentController</li>
+                                <li>Ubah fungsi index</li>
+                                <li>Isi kodingan yang telah diperbaharui</li>
+                            </ul>
+                            ${gambarLaporanRange(38, 39)}
+                            <ul>
+                                <li>Buka file index.blade.php dan tambahkan komponen antar muka baru</li>
+                                <li>Sesuaikan baris kode pada kolom total SKS</li>
+                                <li>Kodingan Lengkap</li>
+                            </ul>
+                            ${gambarLaporanRange(40, 41)}
+                            <p>Dengan Output:</p>
+                            ${gambarLaporanRange(42, 42)}
+                        </li>
+                    </ol>
+
+                    <h4 class="custom-heading-blue mt-4">D. KESIMPULAN</h4>
+                    <p>
+                        Dari praktikum kali ini, dapat kita pahami dan implementasikan konsep relasi One-to-Many
+                        serta Many-to-Many pada framework Laravel dengan memahami penggunaan
+                        foreign key, pembuatan pivot table, dan penerapan fitur Eloquent Relationship untuk
+                        pengelolaan query data secara lebih efisien dibandingkan metode konvensional. Pada
+                        Praktikum kali ini juga menekankan penerapan best practice dalam pengembangan
+                        aplikasi, khususnya melalui penggunaan metode eager loading untuk mengoptimalkan
+                        kinerja sistem dan menghindari inefisiensi saat memuat data relasional. Seluruh proses
+                        pengelolaan basis data dan implementasi logika program tersebut kemudian
+                        diintegrasikan untuk menampilkan data yang saling berelasi secara baik pada halaman
+                        pengguna, sehingga pemahaman terhadap konsep relationship ini menjadi sangat penting
+                        dalam mendukung pembangunan aplikasi web yang terstruktur, efisien, fleksibel, dan
+                        mudah dipelihara.
+                    </p>
+                `
             };
 
             const btnPemogramanWeb = document.getElementById("btn-pemograman-web");
