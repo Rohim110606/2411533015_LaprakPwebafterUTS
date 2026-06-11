@@ -249,6 +249,33 @@
                         </div>
                     </div>
 
+                    <!-- Card 3 -->
+                    <div class="col report-item" data-category="pemograman-web">
+                        <div class="card h-100 custom-portfolio-card custom-report-card">
+                            <div class="report-icon-box">
+                                <i class="fa-brands fa-laravel"></i>
+                            </div>
+
+                            <div class="card-body d-flex flex-column">
+                                <span class="badge custom-badge-web align-self-start mb-3">
+                                    Pemograman Web
+                                </span>
+
+                                <h5 class="card-title">Laporan Praktikum UI dan Bootsrap</h5>
+
+                                <p class="card-text small text-muted">
+                                    Laporan praktikum pengembangan website menggunakan framework Laravel.
+                                </p>
+
+                                <div class="mt-auto">
+                                    <button class="btn btn-sm custom-btn-blue w-100 btn-baca-laporan" type="button" data-report="laravel-ui-bootstrap">
+                                        Baca Laporan
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
                 </div>
 
                 <!-- Detail Laporan -->
@@ -259,7 +286,7 @@
                             <h3 id="detail-title" class="fw-bold custom-heading-blue mb-4"></h3>
                             <div id="detail-content" class="report-detail-content"></div>
                             <div class="d-flex justify-content-end gap-2 mt-4">
-                                <a class="btn custom-btn-outline px-4" href="https://github.com/Rohim110606/PraktikumPwebSemester4" target="_blank" rel="noopener noreferrer">
+                                <a class="btn custom-btn-outline px-4" href="https://github.com/Rohim110606/2411533015_abdurrohim_laravel-sisfo" target="_blank" rel="noopener noreferrer">
                                     <i class="fab fa-github me-2"></i>Repository
                                 </a>
                                 <button class="btn custom-btn-blue px-4" id="finishReadingButton" type="button">
@@ -710,6 +737,170 @@
                         pengguna, sehingga pemahaman terhadap konsep relationship ini menjadi sangat penting
                         dalam mendukung pembangunan aplikasi web yang terstruktur, efisien, fleksibel, dan
                         mudah dipelihara.
+                    </p>
+                `
+            };
+
+            const generatePlaceholders = (count, startIdx) => {
+                let html = '';
+                for (let i = 0; i < count; i++) {
+                    html += `
+                        <figure class="report-image">
+                            <img src="img/ui_bootstrap_${startIdx + i}.png" alt="Gambar Praktikum UI Bootstrap ${startIdx + i}">
+                        </figure>
+                    `;
+                }
+                return html;
+            };
+
+            laporanData["laravel-ui-bootstrap"] = {
+                title: "Laporan Praktikum UI dan Bootsrap",
+                content: `
+                    <h4 class="custom-heading-blue">A. PENDAHULUAN</h4>
+                    <p>
+                        Perkembangan teknologi informasi menuntut adanya sistem informasi yang mampu mengelola data secara efektif, efisien, dan terstruktur. Dalam pengembangan aplikasi berbasis web, framework Laravel menjadi salah satu pilihan yang banyak digunakan karena menyediakan berbagai fitur yang mempermudah proses pengembangan, seperti authentication, migration, seeding, routing, dan templating.
+                    </p>
+                    <p>
+                        Pada praktikum kali ini akan kita lakukan implementasi antarmuka pengguna (User Interface/UI) menggunakan Bootstrap serta penerapan konsep templating pada framework Laravel 9 dalam studi kasus Sistem Informasi Sekolah. Kegiatan praktikum mencakup pembuatan proyek Laravel, konfigurasi database, penerapan fitur autentikasi, pembuatan layout aplikasi menggunakan template SB Admin 2, serta pengembangan fitur manajemen pengguna (CRUD). Melalui praktikum ini, mahasiswa diharapkan dapat memahami proses pembangunan aplikasi web yang memiliki tampilan menarik, terstruktur, dan mudah dikelola.
+                    </p>
+
+                    <h4 class="custom-heading-blue mt-4">B. TUJUAN</h4>
+                    <ol>
+                        <li>Mahasiswa mampu memahami proses implementasi fitur autentikasi pada Laravel menggunakan Laravel UI dan Bootstrap sehingga aplikasi memiliki sistem login, registrasi, serta manajemen pengguna yang aman dan terintegrasi.</li>
+                        <li>Mahasiswa mampu menerapkan konsep templating dan layouting pada Laravel untuk membangun antarmuka aplikasi yang konsisten, terstruktur, dan mudah dikembangkan menggunakan template Bootstrap.</li>
+                        <li>Mahasiswa mampu mengimplementasikan operasi CRUD (Create, Read, Update, Delete) pada data pengguna sebagai dasar pengelolaan data dalam aplikasi web berbasis Laravel.</li>
+                    </ol>
+
+                    <h4 class="custom-heading-blue mt-4">C. ISI</h4>
+                    <ol>
+                        <li>
+                            Pertama-tama yang perlu kita buat adalah menginstall kembali composer yang akan kita gunakan pada folder "Praktikumweb9"
+                            ${generatePlaceholders(1, 1)}
+                        </li>
+                        <li>
+                            Selanjutnya kita perlu membuat kodingan dengan instruksi "Php artisan Serve" dengan hasil sperti ini
+                            ${generatePlaceholders(1, 2)}
+                        </li>
+                        <li>
+                            Setelah itu kita perlu mengonfigurasikan kodingan dibawah ini ke database yang kita punya,dengan mengganti bagian kodingan pada file .env
+                            ${generatePlaceholders(1, 3)}
+                        </li>
+                        <li>
+                            Kemudian kita akan membuat kodingan yang berfungsi untuk menginstall package laravel dengan kodingan di bawah ini
+                            ${generatePlaceholders(1, 4)}
+                        </li>
+                        <li>
+                            Setelah itu kita perlu membuat kodingan yang berfungsi untuk menghasilkan tampilan autentikasi laravel menggunakan bootstrap secara otomatis.
+                            ${generatePlaceholders(1, 5)}
+                        </li>
+                        <li>
+                            Selanjutnya kita perlu membuat kodingan yang berfungsi untuk menginstall semua package yang dibutuhkan oleh sebuah project node.js
+                            ${generatePlaceholders(1, 6)}
+                        </li>
+                        <li>
+                            Setelah itu kita perlu menjalankan akses dengan mengetikkan http://127.0.0.1:8000/login dan register http://127.0.0.1:8000/register
+                            ${generatePlaceholders(3, 7)}
+                        </li>
+                        <li>
+                            Kemudian kita perlu membuat kodingan yang berfungsi untuk membuat file migration baru pada laravel
+                            ${generatePlaceholders(1, 10)}
+                        </li>
+                        <li>
+                            Setelah itu kita akan mengganti isi dari file di migration yang sudah dibuat sebelumnya dengan yang ada dibawah ini,yang digunakan untuk memodifikasi struktur tabel users dengan menambahkan beberapa kolom baru kedalam database
+                            ${generatePlaceholders(1, 11)}
+                        </li>
+                        <li>
+                            Selanjutnya kita akan membuat kodingan yang berfungsi untuk mengisi secara otomatis file adminSeeder.php akan dibuat pada folder database.
+                            ${generatePlaceholders(2, 12)}
+                        </li>
+                        <li>
+                            Kemudian kita juga akan membuat kodingan yang berfungsi untuk menjalankan seeder tertentu pada laravel
+                            ${generatePlaceholders(1, 14)}
+                        </li>
+                        <li>
+                            Setelah itu kemudian kita perlu mengganti isi dari file app.blade.php yang berfungsi untuk mengganti tampilan halaman login
+                            ${generatePlaceholders(2, 15)}
+                        </li>
+                        <li>
+                            Kemudian kita akan membuat sebuah file baru dengan nama "main.blade.php" didalam folder layout.
+                            ${generatePlaceholders(2, 17)}
+                        </li>
+                        <li>
+                            Kemudian setelah kita membuat kodingan untuk isi dari file main.blade.php,kita perlu membuat file baru dengan nama "sidebar.blade.php" dengan isi kodingan seperti dibawah ini
+                            ${generatePlaceholders(1, 19)}
+                        </li>
+                        <li>
+                            Selanjutnya kita juga perlu membuat file baru di dalam folder yang sama dengan nama "Topbar.blade.php" dan kita isi kodingannya seperti dibawah ini
+                            ${generatePlaceholders(2, 20)}
+                        </li>
+                        <li>
+                            Setelah itu kita perlu sedikit mengubah isi dari file "home.blade.php" dengan kodingan di bawah ini yang berfungsi untuk menampilkan halaman dashboard dengan menggunakan layout utama
+                            ${generatePlaceholders(2, 22)}
+                        </li>
+                        <li>
+                            Kemudian kita akan membuat fitur manajemen users dengan mengetikkan instruksi "php artisan make:controller UserController --resource"
+                            ${generatePlaceholders(5, 24)}
+                        </li>
+                        <li>
+                            Selanjutnya kita perlu membuat folder baru di dalam folder view dengan nama "user" dan menambahkan file baru dengan nama "create.blade.php" dan mengisikan kodingan dibawah ini ke dalamnya
+                            ${generatePlaceholders(3, 29)}
+                        </li>
+                        <li>
+                            Kemudian yang perlu kita lakukan adalah menambahkan file css select 2 ke dalam layout main.blade.php
+                            ${generatePlaceholders(1, 32)}
+                        </li>
+                        <li>
+                            Selanjutnya kita perlu membuat form inputan create user yang kita edit pada file "create.blade.php" menjadi program berikut
+                            ${generatePlaceholders(2, 33)}
+                        </li>
+                        <li>
+                            Kemudian kita perlu membuka action store pada controller kemudian mengisikan program berikut
+                            ${generatePlaceholders(1, 35)}
+                        </li>
+                        <li>
+                            Setelah itu kita perlu file user controller dan mengubah bagian action index nya seperti dibawah ini
+                            ${generatePlaceholders(1, 36)}
+                        </li>
+                        <li>
+                            Selanjutnya kita perlu membuat file baru dengan nama "index.blade.php" di dalam folder User dan menuliskan isi dari kodingannya sama seperti dibawah ini
+                            ${generatePlaceholders(2, 37)}
+                        </li>
+                        <li>
+                            Setelah itu kita perlu untuk melakukan proses update data user terlebih dahulu dan kita buka bagian action edit pada user controller
+                            ${generatePlaceholders(1, 39)}
+                        </li>
+                        <li>
+                            Kemudian kita perlu membuat file baru didalam folder user dengan nama "edit.blade.php" dengan isi kodingan seperti di bawah ini
+                            ${generatePlaceholders(2, 40)}
+                        </li>
+                        <li>
+                            Kemudian buka bagian action pada bagian user controller dan ganti isi nya menjadi seperti ini
+                            ${generatePlaceholders(1, 42)}
+                        </li>
+                        <li>
+                            Selanjutnya kita perlu menambahkan tombol atau link pada list user dan menambahkan kodingan dibawah ini
+                            ${generatePlaceholders(1, 43)}
+                        </li>
+                        <li>
+                            Setelah itu kita perlu menambahkan kodingan di bawah ini pada user controller
+                            ${generatePlaceholders(1, 44)}
+                        </li>
+                        <li>
+                            Terakhir perlu kita tambahkan menu users pada file sidebar.blade.php dan tambahkan kodingan berikut ini
+                            ${generatePlaceholders(1, 45)}
+                        </li>
+                        <li>
+                            Sehingga di akhir akan ada tampilan aplikasi kita seperti ini
+                            ${generatePlaceholders(1, 46)}
+                        </li>
+                    </ol>
+
+                    <h4 class="custom-heading-blue mt-4">D. KESIMPULAN</h4>
+                    <p>
+                        Berdasarkan praktikum yang telah dilakukan, dapat disimpulkan bahwa Laravel mempermudah dan mempercepat pengembangan Sistem Informasi Sekolah. Fitur authentication memungkinkan kita membuat sistem login dan registrasi secara otomatis, sedangkan migration dan seeder memudahkan pengelolaan struktur database serta data awal pengguna.
+                    </p>
+                    <p>
+                        Selain itu, penggunaan Blade Template dan SB Admin 2 membantu kita membangun antarmuka yang lebih rapi, terstruktur, dan mudah dikelola melalui pemisahan komponen layout. Pemanfaatan Controller Resource juga membuat pembuatan modul CRUD Manajemen Users menjadi lebih ringkas karena route dan metode operasinya telah diatur secara otomatis oleh Laravel.
                     </p>
                 `
             };
