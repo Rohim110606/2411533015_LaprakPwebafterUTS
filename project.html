@@ -1125,39 +1125,22 @@
             buttonsBacaLaporan.forEach(function (button) {
                 button.addEventListener("click", function () {
                     const reportKey = button.getAttribute("data-report");
-                    const selectedReport = laporanData[reportKey];
-
-                    if (!selectedReport) {
-                        return;
-                    }
-
-                    detailTitle.innerHTML = selectedReport.title;
-                    detailContent.innerHTML = selectedReport.content;
                     
-                    // Update repository link if available
-                    if (selectedReport.repositoryUrl) {
-                        repositoryButton.href = selectedReport.repositoryUrl;
-                    } else {
-                        repositoryButton.href = "https://github.com/Rohim110606/2411533015_abdurrohim_laravel-sisfo";
-                    }
+                    // Map report keys to HTML file names
+                    const reportFiles = {
+                        "laravel-web": "laporan-laravel-web.html",
+                        "laravel-relationship": "laporan-laravel-relationship.html",
+                        "laravel-ui-bootstrap": "laporan-laravel-ui-bootstrap.html",
+                        "mobile-basic": "laporan-mobile-basic.html",
+                        "react-native": "laporan-react-native.html"
+                    };
                     
-                    detailSection.style.display = "block";
-
-                    buttonsBacaLaporan.forEach(function (btn) {
-                        btn.classList.remove("active");
-                    });
-
-                    reportItems.forEach(function (item) {
-                        item.classList.remove("active-card");
-                    });
-
-                    button.classList.add("active");
-                    button.closest(".report-item").classList.add("active-card");
-
-                    detailSection.scrollIntoView({
-                        behavior: "smooth",
-                        block: "start"
-                    });
+                    const fileName = reportFiles[reportKey];
+                    
+                    if (fileName) {
+                        // Open the HTML file in a new tab
+                        window.open(fileName, '_blank');
+                    }
                 });
             });
 

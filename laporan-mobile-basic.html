@@ -1,0 +1,299 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Laporan Praktikum Widget Flutter - Expense Tracker</title>
+    
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+
+    <style>
+        .report-detail-content,
+        .report-detail-content h4,
+        .report-detail-content h5,
+        .report-detail-content p,
+        .report-detail-content li,
+        .report-image figcaption {
+            font-family: "Times New Roman", Times, serif;
+            font-size: 12pt;
+        }
+
+        .report-detail-content p {
+            line-height: 1.75;
+            text-align: justify;
+        }
+
+        .report-detail-content ul {
+            padding-left: 1.5rem;
+        }
+
+        .report-image {
+            margin: 1rem 0 2rem;
+        }
+
+        .report-image img {
+            width: 100%;
+            max-height: 520px;
+            object-fit: contain;
+            border-radius: 8px;
+            border: 1px solid #e9ecef;
+            background-color: #f8f9fa;
+            box-shadow: 0 6px 18px rgba(0, 0, 0, 0.08);
+        }
+
+        .report-image figcaption {
+            color: #6c757d;
+            margin-top: 0.65rem;
+            text-align: center;
+        }
+
+        .detail-report-card {
+            border-radius: 15px;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-light fixed-top custom-navbar-fixed">
+        <div class="container">
+            <a class="navbar-brand fw-bold" href="index.html">mydonatcandy</a>
+
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" 
+                aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="index.html">Home</a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a class="nav-link" href="about.html">About</a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a class="nav-link" href="portfolio.html">Portfolio</a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="project.html">Project</a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a class="nav-link" href="contact.html">Contact</a>
+                    </li>
+                </ul>
+
+                <form class="d-flex ms-3" role="search">
+                    <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+                    <button class="btn btn-outline-secondary" type="submit">
+                        <i class="fas fa-search"></i>
+                    </button>
+                </form>
+            </div>
+        </div>
+    </nav>
+
+    <main>
+        <!-- Header -->
+        <section class="page-header text-center py-5" style="background-color: var(--color-cream);">
+            <div class="container">
+                <h1 class="display-5 fw-bold custom-heading-blue">Praktikum 2 Modul 1</h1>
+                <p class="lead text-muted mb-0">
+                    Laporan Praktikum Widget Flutter - Expense Tracker
+                </p>
+            </div>
+        </section>
+
+        <!-- Detail Laporan -->
+        <section class="py-5">
+            <div class="container">
+                <div class="card shadow border-0 detail-report-card">
+                    <div class="card-body p-4 p-md-5">
+                        <span class="badge custom-badge-mobile mb-3">Aplikasi Mobile</span>
+                        <h3 class="fw-bold custom-heading-blue mb-4">Laporan Praktikum Widget Flutter - Expense Tracker</h3>
+                        <div class="report-detail-content">
+                            <h4 class="custom-heading-blue">PENDAHULUAN</h4>
+                            <p>
+                                Pengembangan aplikasi seluler modern menuntut pembuatan antarmuka pengguna (UI) yang responsif, terstruktur, dan interaktif. Flutter sebagai framework open-source berbasis bahasa pemrograman Dart menyediakan berbagai komponen penyusun antarmuka yang dikenal sebagai widget. Dalam arsitektur Flutter, widget merupakan fondasi utama yang mengatur seluruh struktur tampilan, mulai dari komponen tata letak dasar hingga elemen antarmuka yang kompleks. Oleh karena itu, pemahaman mendalam mengenai kerangka dasar seperti MaterialApp dan Scaffold menjadi langkah awal yang sangat penting dalam membangun aplikasi seluler berbasis Flutter.
+                            </p>
+                            <p>
+                                Secara umum, Flutter membagi komponen antarmuka menjadi dua jenis utama, yaitu Stateless Widget dan Stateful Widget. Stateless Widget digunakan untuk menampilkan elemen UI yang bersifat statis dan tidak mengalami perubahan data setelah dirender. Sebaliknya, Stateful Widget digunakan untuk elemen UI yang dinamis dan dapat merespons interaksi pengguna melalui manajemen status internal menggunakan fungsi setState(). Melalui praktikum ini, pembuatan aplikasi Expense Tracker sederhana digunakan sebagai studi kasus untuk memahami penerapan kedua jenis widget tersebut secara langsung.
+                            </p>
+
+                            <h4 class="custom-heading-blue mt-4">TUJUAN</h4>
+                            <ul>
+                                <li>Mahasiswa mampu memahami kerangka dasar pengembangan aplikasi Flutter dengan mengimplementasikan komponen MaterialApp dan Scaffold.</li>
+                                <li>Mahasiswa mampu membedakan serta menerapkan penggunaan Stateless Widget untuk antarmuka statis dan Stateful Widget untuk komponen dinamis.</li>
+                                <li>Mahasiswa mampu menerapkan fungsi setState() untuk mengelola state dasar dalam menciptakan tampilan antarmuka yang interaktif.</li>
+                            </ul>
+
+                            <h4 class="custom-heading-blue mt-4">ISI</h4>
+
+                            <figure class="report-image">
+                                <img src="img/Laprak_Mobile/1.png" alt="Kode Struktur MyApp">
+                                <figcaption>Gambar 1. Kode Struktur MyApp.</figcaption>
+                            </figure>
+                            <p>
+                                Kodingan di atas berfungsi untuk merupakan struktur utama aplikasi Flutter yang dimulai dengan fungsi main() untuk menjalankan MyApp sebagai titik masuk program. Kelas MyApp bertindak sebagai Stateless Widget dasar yang me-return MaterialApp untuk mengatur konfigurasi global seperti tema warna biru dan judul 'Expense Tracker'.
+                            </p>
+
+                            <figure class="report-image">
+                                <img src="img/Laprak_Mobile/2.png" alt="Kode DashboardScreen">
+                                <figcaption>Gambar 2. Kode DashboardScreen.</figcaption>
+                            </figure>
+                            <p>
+                                Kodingan di atas berfungsi untuk menjelaskan halaman utama DashboardScreen yang menggunakan Scaffold sebagai struktur dasar tampilan aplikasi. Bagian appBar menampilkan bilah atas berwarna biru dengan judul 'Praktikum 1: Widgets'. Pada bagian body, digunakan Padding dan Column untuk menyusun GreetingWidget dan BalanceCardWidget secara vertikal dengan jarak tertentu.
+                            </p>
+
+                            <figure class="report-image">
+                                <img src="img/Laprak_Mobile/3.png" alt="Kode GreetingWidget">
+                                <figcaption>Gambar 3. Kode GreetingWidget.</figcaption>
+                            </figure>
+                            <p>
+                                Kodingan di atas berfungsi untuk menjelaskan GreetingWidget sebagai stateless widget untuk menampilkan komponen sapaan pengguna secara statis. Menggunakan layout Row, bagian kiri menampilkan ikon profil berbentuk lingkaran dengan latar warna biru. Di sebelah kanan ikon, terdapat Column yang menyusun teks nama 'Halo, Budi' dan ucapan 'Selamat datang kembali!' secara vertikal.
+                            </p>
+
+                            <figure class="report-image">
+                                <img src="img/Laprak_Mobile/4.png" alt="Kode BalanceCardWidget State">
+                                <figcaption>Gambar 4. Kode BalanceCardWidget State.</figcaption>
+                            </figure>
+                            <p>
+                                Kodingan di atas berfungsi untuk menjelaskan BalanceCardWidget sebagai stateful widget yang memungkinkan tampilan kartu saldo dapat berubah secara dinamis. Di dalam kelas _BalanceCardWidgetState, dibuat variabel _isBalanceVisible bertipe boolean untuk menyimpan status apakah saldo sedang ditampilkan atau disensor.
+                            </p>
+
+                            <figure class="report-image">
+                                <img src="img/Laprak_Mobile/5.png" alt="Kode Card dan Toggle Visibility">
+                                <figcaption>Gambar 5. Kode Card dan Toggle Visibility.</figcaption>
+                            </figure>
+                            <figure class="report-image">
+                                <img src="img/Laprak_Mobile/5b.png" alt="Kode Fungsi _toggleVisibility">
+                                <figcaption>Gambar 5b. Kode Fungsi _toggleVisibility.</figcaption>
+                            </figure>
+                            <p>
+                                Kodingan di atas berfungsi untuk membuat sebuah Card berwarna biru yang berisi tata letak informasi saldo serta tombol interaktif. Menggunakan ternary operator, bentuk ikon mata pada IconButton dan teks nominal saldo akan berubah secara otomatis sesuai nilai _isBalanceVisible. Ketika tombol mata ditekan, fungsi _toggleVisibility dipanggil untuk menyembunyikan atau menampilkan angka nominal saldo Rp 5.000.000.
+                            </p>
+
+                            <figure class="report-image">
+                                <img src="img/Laprak_Mobile/6.png" alt="Tampilan Output Aplikasi">
+                                <figcaption>Gambar 6. Tampilan Output Aplikasi.</figcaption>
+                            </figure>
+
+                            <h4 class="custom-heading-blue mt-4">LATIHAN</h4>
+
+                            <figure class="report-image">
+                                <img src="img/Laprak_Mobile/7.png" alt="Kode Perubahan Warna">
+                                <figcaption>Gambar 7. Kode Perubahan Warna.</figcaption>
+                            </figure>
+                            <p>
+                                Ubah warna tema BalanceCard dari biru (Colors.blueAccent) menjadi hijau emerald (Colors.teal). Kodingan bagian color berfungsi untuk mengubah warna tema balanced card dari biru menjadi warna hijau teal.
+                            </p>
+
+                            <figure class="report-image">
+                                <img src="img/Laprak_Mobile/8.png" alt="Kode Penambahan Nomor Rekening">
+                                <figcaption>Gambar 8. Kode Penambahan Nomor Rekening.</figcaption>
+                            </figure>
+                            <p>
+                                Tambahkan teks statis berupa "No. Rekening: 1234-5678" di bagian bawah nominal saldo di dalam kartu. Kodingan di atas berfungsi untuk menambahkan teks statis berupa No. Rekening di bagian bawah nominal saldo di dalam kartu.
+                            </p>
+
+                            <figure class="report-image">
+                                <img src="img/Laprak_Mobile/9.png" alt="Tampilan Output Setelah Latihan">
+                                <figcaption>Gambar 9. Tampilan Output Setelah Latihan.</figcaption>
+                            </figure>
+                        </div>
+                        <div class="d-flex justify-content-end gap-2 mt-4">
+                            <a class="btn custom-btn-outline px-4" href="https://github.com/Rohim110606/Praktikum_AplikasiMobile_A_Abdur-Rohim_2411533015" target="_blank" rel="noopener noreferrer">
+                                <i class="fab fa-github me-2"></i>Repository
+                            </a>
+                            <a class="btn custom-btn-blue px-4" href="project.html">
+                                Kembali
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer id="contact" class="bg-dark text-white pt-5 pb-3">
+        <div class="container">
+            <div class="row">
+
+                <div class="col-md-4 mb-4">
+                    <h5 class="fw-bold text-white mb-3">Abdur Rohim</h5>
+                    <p class="text-secondary small">
+                        Mahasiswa Informatika yang bersemangat dalam pengembangan web dan kepemimpinan tim.
+                        Siap berkontribusi dalam kegiatan yang menantang.
+                    </p>
+                </div>
+
+                <div class="col-md-3 offset-md-1 mb-4">
+                    <h5 class="fw-bold text-white mb-3">Quick Links</h5>
+                    <ul class="list-unstyled">
+                        <li>
+                            <a href="index.html" class="text-secondary text-decoration-none">Home</a>
+                        </li>
+
+                        <li>
+                            <a href="about.html" class="text-secondary text-decoration-none">About</a>
+                        </li>
+
+                        <li>
+                            <a href="portfolio.html" class="text-secondary text-decoration-none">Portfolio</a>
+                        </li>
+
+                        <li>
+                            <a href="project.html" class="text-secondary text-decoration-none">Project</a>
+                        </li>
+
+                        <li>
+                            <a href="contact.html" class="text-secondary text-decoration-none">Contact</a>
+                        </li>
+                    </ul>
+                </div>
+
+                <div class="col-md-4 mb-4">
+                    <h5 class="fw-bold text-white mb-3">Connect</h5>
+                    <div class="social-icons pt-1">
+                        <a href="#" class="text-white me-3">
+                            <i class="fab fa-facebook-f fa-lg"></i>
+                        </a>
+
+                        <a href="#" class="text-white me-3">
+                            <i class="fab fa-twitter fa-lg"></i>
+                        </a>
+
+                        <a href="#" class="text-white me-3">
+                            <i class="fab fa-linkedin-in fa-lg"></i>
+                        </a>
+
+                        <a href="#" class="text-white">
+                            <i class="fab fa-instagram fa-lg"></i>
+                        </a>
+                    </div>
+                </div>
+
+            </div>
+            
+            <hr class="text-secondary">
+
+            <div class="text-center pt-2">
+                <p class="mb-0 text-secondary">
+                    &copy; 2025 Abdur Rohim. All rights reserved.
+                </p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+
+</body>
+</html>
