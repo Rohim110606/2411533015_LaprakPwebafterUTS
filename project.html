@@ -186,11 +186,14 @@
                 </div>
 
                 <!-- Tombol Mata Kuliah -->
-                <div class="d-flex justify-content-center flex-wrap mb-5">
-                    <button class="btn custom-btn-blue m-2 report-filter-btn active" id="btn-pemograman-web" type="button">
-                        Pemrograman Web
-                    </button>
-                </div>
+<div class="d-flex justify-content-center flex-wrap mb-5">
+    <button class="btn custom-btn-blue m-2 report-filter-btn active" id="btn-pemograman-web" type="button">
+        Pemrograman Web
+    </button>
+    <button class="btn custom-btn-outline m-2 report-filter-btn" id="btn-aplikasi-mobile" type="button">
+        Aplikasi Mobile
+    </button>
+</div>
 
                 <!-- Card Laporan -->
                 <div class="row row-cols-1 row-cols-md-2 row-cols-lg-3 g-4 justify-content-center" id="report-grid">
@@ -276,6 +279,60 @@
                         </div>
                     </div>
 
+                    <!-- Card 4 - Mobile App 1 -->
+                    <div class="col report-item" data-category="aplikasi-mobile" style="display: none;">
+                        <div class="card h-100 custom-portfolio-card custom-report-card">
+                            <div class="report-icon-box">
+                                <i class="fa-brands fa-android"></i>
+                            </div>
+
+                            <div class="card-body d-flex flex-column">
+                                <span class="badge bg-success align-self-start mb-3">
+                                    Aplikasi Mobile
+                                </span>
+
+                                <h5 class="card-title">Praktikum 2 Modul 1</h5>
+
+                                <p class="card-text small text-muted">
+                                    Laporan praktikum pengembangan aplikasi mobile menggunakan Flutter.
+                                </p>
+
+                                <div class="mt-auto">
+                                    <button class="btn btn-sm custom-btn-blue w-100 btn-baca-laporan" type="button" data-report="mobile-basic">
+                                        Baca Laporan
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Card 5 - Mobile App 2 -->
+                    <div class="col report-item" data-category="aplikasi-mobile" style="display: none;">
+                        <div class="card h-100 custom-portfolio-card custom-report-card">
+                            <div class="report-icon-box">
+                                <i class="fa-brands fa-react"></i>
+                            </div>
+
+                            <div class="card-body d-flex flex-column">
+                                <span class="badge bg-success align-self-start mb-3">
+                                    Aplikasi Mobile
+                                </span>
+
+                                <h5 class="card-title">Praktikum 2 Modul 2</h5>
+
+                                <p class="card-text small text-muted">
+                                    Laporan praktikum pengembangan aplikasi Expense Tracker menggunakan Flutter.
+                                </p>
+
+                                <div class="mt-auto">
+                                    <button class="btn btn-sm custom-btn-blue w-100 btn-baca-laporan" type="button" data-report="react-native">
+                                        Baca Laporan
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
                 </div>
 
                 <!-- Detail Laporan -->
@@ -286,7 +343,7 @@
                             <h3 id="detail-title" class="fw-bold custom-heading-blue mb-4"></h3>
                             <div id="detail-content" class="report-detail-content"></div>
                             <div class="d-flex justify-content-end gap-2 mt-4">
-                                <a class="btn custom-btn-outline px-4" href="https://github.com/Rohim110606/2411533015_abdurrohim_laravel-sisfo" target="_blank" rel="noopener noreferrer">
+                                <a class="btn custom-btn-outline px-4" id="repositoryButton" href="https://github.com/Rohim110606/2411533015_abdurrohim_laravel-sisfo" target="_blank" rel="noopener noreferrer">
                                     <i class="fab fa-github me-2"></i>Repository
                                 </a>
                                 <button class="btn custom-btn-blue px-4" id="finishReadingButton" type="button">
@@ -772,140 +829,232 @@
                     </ol>
 
                     <h4 class="custom-heading-blue mt-4">C. ISI</h4>
-                    <ol>
-                        <li>
-                            Pertama-tama yang perlu kita buat adalah menginstall kembali composer yang akan kita gunakan pada folder "Praktikumweb9"
-                            ${generatePlaceholders(1, 1)}
-                        </li>
-                        <li>
-                            Selanjutnya kita perlu membuat kodingan dengan instruksi "Php artisan Serve" dengan hasil sperti ini
-                            ${generatePlaceholders(1, 2)}
-                        </li>
-                        <li>
-                            Setelah itu kita perlu mengonfigurasikan kodingan dibawah ini ke database yang kita punya,dengan mengganti bagian kodingan pada file .env
-                            ${generatePlaceholders(1, 3)}
-                        </li>
-                        <li>
-                            Kemudian kita akan membuat kodingan yang berfungsi untuk menginstall package laravel dengan kodingan di bawah ini
-                            ${generatePlaceholders(1, 4)}
-                        </li>
-                        <li>
-                            Setelah itu kita perlu membuat kodingan yang berfungsi untuk menghasilkan tampilan autentikasi laravel menggunakan bootstrap secara otomatis.
-                            ${generatePlaceholders(1, 5)}
-                        </li>
-                        <li>
-                            Selanjutnya kita perlu membuat kodingan yang berfungsi untuk menginstall semua package yang dibutuhkan oleh sebuah project node.js
-                            ${generatePlaceholders(1, 6)}
-                        </li>
-                        <li>
-                            Setelah itu kita perlu menjalankan akses dengan mengetikkan http://127.0.0.1:8000/login dan register http://127.0.0.1:8000/register
-                            ${generatePlaceholders(3, 7)}
-                        </li>
-                        <li>
-                            Kemudian kita perlu membuat kodingan yang berfungsi untuk membuat file migration baru pada laravel
-                            ${generatePlaceholders(1, 10)}
-                        </li>
-                        <li>
-                            Setelah itu kita akan mengganti isi dari file di migration yang sudah dibuat sebelumnya dengan yang ada dibawah ini,yang digunakan untuk memodifikasi struktur tabel users dengan menambahkan beberapa kolom baru kedalam database
-                            ${generatePlaceholders(1, 11)}
-                        </li>
-                        <li>
-                            Selanjutnya kita akan membuat kodingan yang berfungsi untuk mengisi secara otomatis file adminSeeder.php akan dibuat pada folder database.
-                            ${generatePlaceholders(2, 12)}
-                        </li>
-                        <li>
-                            Kemudian kita juga akan membuat kodingan yang berfungsi untuk menjalankan seeder tertentu pada laravel
-                            ${generatePlaceholders(1, 14)}
-                        </li>
-                        <li>
-                            Setelah itu kemudian kita perlu mengganti isi dari file app.blade.php yang berfungsi untuk mengganti tampilan halaman login
-                            ${generatePlaceholders(2, 15)}
-                        </li>
-                        <li>
-                            Kemudian kita akan membuat sebuah file baru dengan nama "main.blade.php" didalam folder layout.
-                            ${generatePlaceholders(2, 17)}
-                        </li>
-                        <li>
-                            Kemudian setelah kita membuat kodingan untuk isi dari file main.blade.php,kita perlu membuat file baru dengan nama "sidebar.blade.php" dengan isi kodingan seperti dibawah ini
-                            ${generatePlaceholders(1, 19)}
-                        </li>
-                        <li>
-                            Selanjutnya kita juga perlu membuat file baru di dalam folder yang sama dengan nama "Topbar.blade.php" dan kita isi kodingannya seperti dibawah ini
-                            ${generatePlaceholders(2, 20)}
-                        </li>
-                        <li>
-                            Setelah itu kita perlu sedikit mengubah isi dari file "home.blade.php" dengan kodingan di bawah ini yang berfungsi untuk menampilkan halaman dashboard dengan menggunakan layout utama
-                            ${generatePlaceholders(2, 22)}
-                        </li>
-                        <li>
-                            Kemudian kita akan membuat fitur manajemen users dengan mengetikkan instruksi "php artisan make:controller UserController --resource"
-                            ${generatePlaceholders(5, 24)}
-                        </li>
-                        <li>
-                            Selanjutnya kita perlu membuat folder baru di dalam folder view dengan nama "user" dan menambahkan file baru dengan nama "create.blade.php" dan mengisikan kodingan dibawah ini ke dalamnya
-                            ${generatePlaceholders(3, 29)}
-                        </li>
-                        <li>
-                            Kemudian yang perlu kita lakukan adalah menambahkan file css select 2 ke dalam layout main.blade.php
-                            ${generatePlaceholders(1, 32)}
-                        </li>
-                        <li>
-                            Selanjutnya kita perlu membuat form inputan create user yang kita edit pada file "create.blade.php" menjadi program berikut
-                            ${generatePlaceholders(2, 33)}
-                        </li>
-                        <li>
-                            Kemudian kita perlu membuka action store pada controller kemudian mengisikan program berikut
-                            ${generatePlaceholders(1, 35)}
-                        </li>
-                        <li>
-                            Setelah itu kita perlu file user controller dan mengubah bagian action index nya seperti dibawah ini
-                            ${generatePlaceholders(1, 36)}
-                        </li>
-                        <li>
-                            Selanjutnya kita perlu membuat file baru dengan nama "index.blade.php" di dalam folder User dan menuliskan isi dari kodingannya sama seperti dibawah ini
-                            ${generatePlaceholders(2, 37)}
-                        </li>
-                        <li>
-                            Setelah itu kita perlu untuk melakukan proses update data user terlebih dahulu dan kita buka bagian action edit pada user controller
-                            ${generatePlaceholders(1, 39)}
-                        </li>
-                        <li>
-                            Kemudian kita perlu membuat file baru didalam folder user dengan nama "edit.blade.php" dengan isi kodingan seperti di bawah ini
-                            ${generatePlaceholders(2, 40)}
-                        </li>
-                        <li>
-                            Kemudian buka bagian action pada bagian user controller dan ganti isi nya menjadi seperti ini
-                            ${generatePlaceholders(1, 42)}
-                        </li>
-                        <li>
-                            Selanjutnya kita perlu menambahkan tombol atau link pada list user dan menambahkan kodingan dibawah ini
-                            ${generatePlaceholders(1, 43)}
-                        </li>
-                        <li>
-                            Setelah itu kita perlu menambahkan kodingan di bawah ini pada user controller
-                            ${generatePlaceholders(1, 44)}
-                        </li>
-                        <li>
-                            Terakhir perlu kita tambahkan menu users pada file sidebar.blade.php dan tambahkan kodingan berikut ini
-                            ${generatePlaceholders(1, 45)}
-                        </li>
-                        <li>
-                            Sehingga di akhir akan ada tampilan aplikasi kita seperti ini
-                            ${generatePlaceholders(1, 46)}
-                        </li>
-                    </ol>
+                    <p>Praktikum ini mencakup seluruh tahapan pengembangan aplikasi web modern dari setup awal hingga deployment dengan menggunakan best practice Laravel.</p>
 
                     <h4 class="custom-heading-blue mt-4">D. KESIMPULAN</h4>
                     <p>
                         Berdasarkan praktikum yang telah dilakukan, dapat disimpulkan bahwa Laravel mempermudah dan mempercepat pengembangan Sistem Informasi Sekolah. Fitur authentication memungkinkan kita membuat sistem login dan registrasi secara otomatis, sedangkan migration dan seeder memudahkan pengelolaan struktur database serta data awal pengguna.
                     </p>
+                `
+            };
+
+            laporanData["mobile-basic"] = {
+                title: "Laporan Praktikum Widget Flutter - Expense Tracker",
+                repositoryUrl: "https://github.com/Rohim110606/Praktikum_AplikasiMobile_A_Abdur-Rohim_2411533015",
+                content: `
+                    <h4 class="custom-heading-blue">PENDAHULUAN</h4>
                     <p>
-                        Selain itu, penggunaan Blade Template dan SB Admin 2 membantu kita membangun antarmuka yang lebih rapi, terstruktur, dan mudah dikelola melalui pemisahan komponen layout. Pemanfaatan Controller Resource juga membuat pembuatan modul CRUD Manajemen Users menjadi lebih ringkas karena route dan metode operasinya telah diatur secara otomatis oleh Laravel.
+                        Pengembangan aplikasi seluler modern menuntut pembuatan antarmuka pengguna (UI) yang responsif, terstruktur, dan interaktif. Flutter sebagai framework open-source berbasis bahasa pemrograman Dart menyediakan berbagai komponen penyusun antarmuka yang dikenal sebagai widget. Dalam arsitektur Flutter, widget merupakan fondasi utama yang mengatur seluruh struktur tampilan, mulai dari komponen tata letak dasar hingga elemen antarmuka yang kompleks. Oleh karena itu, pemahaman mendalam mengenai kerangka dasar seperti MaterialApp dan Scaffold menjadi langkah awal yang sangat penting dalam membangun aplikasi seluler berbasis Flutter.
+                    </p>
+                    <p>
+                        Secara umum, Flutter membagi komponen antarmuka menjadi dua jenis utama, yaitu Stateless Widget dan Stateful Widget. Stateless Widget digunakan untuk menampilkan elemen UI yang bersifat statis dan tidak mengalami perubahan data setelah dirender. Sebaliknya, Stateful Widget digunakan untuk elemen UI yang dinamis dan dapat merespons interaksi pengguna melalui manajemen status internal menggunakan fungsi setState(). Melalui praktikum ini, pembuatan aplikasi Expense Tracker sederhana digunakan sebagai studi kasus untuk memahami penerapan kedua jenis widget tersebut secara langsung.
+                    </p>
+
+                    <h4 class="custom-heading-blue mt-4">TUJUAN</h4>
+                    <ul>
+                        <li>Mahasiswa mampu memahami kerangka dasar pengembangan aplikasi Flutter dengan mengimplementasikan komponen MaterialApp dan Scaffold.</li>
+                        <li>Mahasiswa mampu membedakan serta menerapkan penggunaan Stateless Widget untuk antarmuka statis dan Stateful Widget untuk komponen dinamis.</li>
+                        <li>Mahasiswa mampu menerapkan fungsi setState() untuk mengelola state dasar dalam menciptakan tampilan antarmuka yang interaktif.</li>
+                    </ul>
+
+                    <h4 class="custom-heading-blue mt-4">ISI</h4>
+
+                    <figure class="report-image">
+                        <img src="img/Laprak_Mobile/1.png" alt="Kode Struktur MyApp">
+                        <figcaption>Gambar 1. Kode Struktur MyApp.</figcaption>
+                    </figure>
+                    <p>
+                        Kodingan di atas berfungsi untuk merupakan struktur utama aplikasi Flutter yang dimulai dengan fungsi main() untuk menjalankan MyApp sebagai titik masuk program. Kelas MyApp bertindak sebagai Stateless Widget dasar yang me-return MaterialApp untuk mengatur konfigurasi global seperti tema warna biru dan judul 'Expense Tracker'.
+                    </p>
+
+                    <figure class="report-image">
+                        <img src="img/Laprak_Mobile/2.png" alt="Kode DashboardScreen">
+                        <figcaption>Gambar 2. Kode DashboardScreen.</figcaption>
+                    </figure>
+                    <p>
+                        Kodingan di atas berfungsi untuk menjelaskan halaman utama DashboardScreen yang menggunakan Scaffold sebagai struktur dasar tampilan aplikasi. Bagian appBar menampilkan bilah atas berwarna biru dengan judul 'Praktikum 1: Widgets'. Pada bagian body, digunakan Padding dan Column untuk menyusun GreetingWidget dan BalanceCardWidget secara vertikal dengan jarak tertentu.
+                    </p>
+
+                    <figure class="report-image">
+                        <img src="img/Laprak_Mobile/3.png" alt="Kode GreetingWidget">
+                        <figcaption>Gambar 3. Kode GreetingWidget.</figcaption>
+                    </figure>
+                    <p>
+                        Kodingan di atas berfungsi untuk menjelaskan GreetingWidget sebagai stateless widget untuk menampilkan komponen sapaan pengguna secara statis. Menggunakan layout Row, bagian kiri menampilkan ikon profil berbentuk lingkaran dengan latar warna biru. Di sebelah kanan ikon, terdapat Column yang menyusun teks nama 'Halo, Budi' dan ucapan 'Selamat datang kembali!' secara vertikal.
+                    </p>
+
+                    <figure class="report-image">
+                        <img src="img/Laprak_Mobile/4.png" alt="Kode BalanceCardWidget State">
+                        <figcaption>Gambar 4. Kode BalanceCardWidget State.</figcaption>
+                    </figure>
+                    <p>
+                        Kodingan di atas berfungsi untuk menjelaskan BalanceCardWidget sebagai stateful widget yang memungkinkan tampilan kartu saldo dapat berubah secara dinamis. Di dalam kelas _BalanceCardWidgetState, dibuat variabel _isBalanceVisible bertipe boolean untuk menyimpan status apakah saldo sedang ditampilkan atau disensor.
+                    </p>
+
+                    <figure class="report-image">
+                        <img src="img/Laprak_Mobile/5.png" alt="Kode Card dan Toggle Visibility">
+                        <figcaption>Gambar 5. Kode Card dan Toggle Visibility.</figcaption>
+                    </figure>
+                    <figure class="report-image">
+                        <img src="img/Laprak_Mobile/5b.png" alt="Kode Fungsi _toggleVisibility">
+                        <figcaption>Gambar 5b. Kode Fungsi _toggleVisibility.</figcaption>
+                    </figure>
+                    <p>
+                        Kodingan di atas berfungsi untuk membuat sebuah Card berwarna biru yang berisi tata letak informasi saldo serta tombol interaktif. Menggunakan ternary operator, bentuk ikon mata pada IconButton dan teks nominal saldo akan berubah secara otomatis sesuai nilai _isBalanceVisible. Ketika tombol mata ditekan, fungsi _toggleVisibility dipanggil untuk menyembunyikan atau menampilkan angka nominal saldo Rp 5.000.000.
+                    </p>
+
+                    <figure class="report-image">
+                        <img src="img/Laprak_Mobile/6.png" alt="Tampilan Output Aplikasi">
+                        <figcaption>Gambar 6. Tampilan Output Aplikasi.</figcaption>
+                    </figure>
+
+                    <h4 class="custom-heading-blue mt-4">LATIHAN</h4>
+
+                    <figure class="report-image">
+                        <img src="img/Laprak_Mobile/7.png" alt="Kode Perubahan Warna">
+                        <figcaption>Gambar 7. Kode Perubahan Warna.</figcaption>
+                    </figure>
+                    <p>
+                        Ubah warna tema BalanceCard dari biru (Colors.blueAccent) menjadi hijau emerald (Colors.teal). Kodingan bagian color berfungsi untuk mengubah warna tema balanced card dari biru menjadi warna hijau teal.
+                    </p>
+
+                    <figure class="report-image">
+                        <img src="img/Laprak_Mobile/8.png" alt="Kode Penambahan Nomor Rekening">
+                        <figcaption>Gambar 8. Kode Penambahan Nomor Rekening.</figcaption>
+                    </figure>
+                    <p>
+                        Tambahkan teks statis berupa "No. Rekening: 1234-5678" di bagian bawah nominal saldo di dalam kartu. Kodingan di atas berfungsi untuk menambahkan teks statis berupa No. Rekening di bagian bawah nominal saldo di dalam kartu.
+                    </p>
+
+                    <figure class="report-image">
+                        <img src="img/Laprak_Mobile/9.png" alt="Tampilan Output Setelah Latihan">
+                        <figcaption>Gambar 9. Tampilan Output Setelah Latihan.</figcaption>
+                    </figure>
+                `
+            };
+
+            laporanData["react-native"] = {
+                title: "Praktikum 2 Modul 2 - Expense Tracker App",
+                repositoryUrl: "https://github.com/Rohim110606/Praktikum_AplikasiMobile_A_Abdur-Rohim_2411533015",
+                content: `
+                    <h4 class="custom-heading-blue">PENDAHULUAN</h4>
+                    <p>
+                        Perkembangan teknologi informasi saat ini menuntut efisiensi dan akurasi yang lebih baik dalam penyelesaian berbagai permasalahan sehari-hari. Penggunaan program komputer menjadi salah satu solusi utama untuk mempermudah pengolahan data, otomatisasi proses, serta meminimalisir potensi kesalahan manusia. Oleh karena itu, pembuatan kodingan ini dirancang untuk menjawab kebutuhan akan proses kerja yang lebih terstruktur dan efisien.
+                    </p>
+                    <p>
+                        Secara teknis, kodingan ini dibangun dengan memanfaatkan struktur logika dan algoritma yang relevan sesuai dengan konteks permasalahan yang ingin diselesaikan. Pemilihan logika ini bertujuan agar sistem mampu memproses masukan secara akurat dan menghasilkan keluaran yang sesuai dengan ekspektasi. Selain itu, penulisan kode dipastikan tetap sistematis agar mudah dipahami, dikembangkan, maupun dirawat di masa mendatang.
+                    </p>
+                    <p>
+                        Melalui implementasi program ini, diharapkan proses pemecahan masalah dapat dilakukan secara lebih cepat dan konsisten. Laporan ini disusun untuk menjelaskan landasan alur kodingan, komponen logika yang diterapkan, serta gambaran hasil yang diperoleh dari eksekusi sistem tersebut.
+                    </p>
+
+                    <h4 class="custom-heading-blue mt-4">TUJUAN</h4>
+                    <ul>
+                        <li>Mahasiswa mampu membuat program yang mampu menyelesaikan permasalahan pengolahan data atau logika secara otomatis dan efisien.</li>
+                        <li>Mahasiswa mampu menerapkan struktur logika dan algoritma kodingan yang sistematis agar sistem berjalan dengan akurat serta minim kesalahan.</li>
+                        <li>Mahasiswa mampu memahami cara kerja dan alur eksekusi kodingan dalam menghasilkan luaran yang sesuai dengan kebutuhan penggunanya.</li>
+                    </ul>
+
+                    <h4 class="custom-heading-blue mt-4">ISI</h4>
+
+                    <p>
+                        1. Pertama-tama kita akan membuat kodingan yang berfungsi untuk menjalankan aplikasi melalui main() dan menampilkan MyApp sebagai widget utama. MyApp mengatur tampilan dasar aplikasi seperti judul, tema warna biru, menghilangkan banner debug, dan menampilkan DashboardScreen sebagai halaman pertama.
+                    </p>
+                    <figure class="report-image">
+                        <img src="img/Laprak2_Modul2/1.png" alt="Kode MyApp dan Main Function">
+                        <figcaption>Gambar 1. Kode MyApp dan Main Function.</figcaption>
+                    </figure>
+
+                    <p>
+                        2. Kemudian kita perlu membuat kodingan yang berfungsi untuk membuat halaman utama aplikasi menggunakan Scaffold, yang berisi AppBar dengan judul dan tampilan isi yang dapat di-scroll menggunakan SingleChildScrollView.
+                    </p>
+                    <figure class="report-image">
+                        <img src="img/Laprak2_Modul2/2.png" alt="Kode DashboardScreen dengan Scaffold">
+                        <figcaption>Gambar 2. Kode DashboardScreen dengan Scaffold.</figcaption>
+                    </figure>
+
+                    <p>
+                        3. Selanjutnya kita akan membuat kodingan yang berfungsi untuk membuat widget sapaan yang menampilkan foto profil berbentuk lingkaran, teks "Halo, Rohim!", dan pesan selamat datang yang disusun menggunakan Row dan Column.
+                    </p>
+                    <figure class="report-image">
+                        <img src="img/Laprak2_Modul2/3.png" alt="Kode GreetingWidget">
+                        <figcaption>Gambar 3. Kode GreetingWidget.</figcaption>
+                    </figure>
+
+                    <p>
+                        4. Setelah itu kita akan membuat kodingan yang berfungsi untuk membuat StatefulWidget untuk menampilkan kartu saldo yang dapat berubah, dengan variabel _isBalanceVisible untuk mengatur apakah saldo terlihat atau disembunyikan.
+                    </p>
+                    <figure class="report-image">
+                        <img src="img/Laprak2_Modul2/4.png" alt="Kode BalanceCardWidget State">
+                        <figcaption>Gambar 4. Kode BalanceCardWidget State.</figcaption>
+                    </figure>
+
+                    <p>
+                        5. Selanjutnya kita akan membuat kodingan yang berfungsi untuk membuat kartu saldo berwarna biru yang menampilkan saldo utama serta tombol mata untuk menyembunyikan atau menampilkan jumlah saldo.
+                    </p>
+                    <figure class="report-image">
+                        <img src="img/Laprak2_Modul2/5.png" alt="Kode BalanceCard UI">
+                        <figcaption>Gambar 5. Kode BalanceCard UI.</figcaption>
+                    </figure>
+
+                    <p>
+                        6. Kemudian kita akan membuat kodingan yang berfungsi untuk membuat tiga tombol aksi yaitu Pemasukan, Pengeluaran, dan Transfer yang disusun secara horizontal menggunakan Row. Fungsi _buildActionButton() digunakan untuk membuat setiap tombol dengan ikon, warna, dan label yang berbeda tanpa menulis kode yang sama berulang kali.
+                    </p>
+                    <figure class="report-image">
+                        <img src="img/Laprak2_Modul2/6.png" alt="Kode Tombol Aksi (Pemasukan, Pengeluaran, Transfer)">
+                        <figcaption>Gambar 6. Kode Tombol Aksi (Pemasukan, Pengeluaran, Transfer).</figcaption>
+                    </figure>
+                    <figure class="report-image">
+                        <img src="img/Laprak2_Modul2/6b.png" alt="Kode Fungsi _buildActionButton">
+                        <figcaption>Gambar 6b. Kode Fungsi _buildActionButton.</figcaption>
+                    </figure>
+
+                    <p>
+                        7. Setelah itu, perlu kita buat kodingan yang berfungsi untuk membuat daftar transaksi terakhir menggunakan Column, Card, dan ListTile yang menampilkan nama transaksi, tanggal, ikon, serta jumlah uang masuk atau keluar.
+                    </p>
+                    <figure class="report-image">
+                        <img src="img/Laprak2_Modul2/7.png" alt="Kode Daftar Transaksi">
+                        <figcaption>Gambar 7. Kode Daftar Transaksi.</figcaption>
+                    </figure>
+                    <figure class="report-image">
+                        <img src="img/Laprak2_Modul2/7b.png" alt="Kode ListTile Transaksi">
+                        <figcaption>Gambar 7b. Kode ListTile Transaksi.</figcaption>
+                    </figure>
+
+                    <figure class="report-image">
+                        <img src="img/Laprak2_Modul2/8.png" alt="Output Akhir Aplikasi">
+                        <figcaption>Gambar 8. Output Akhir Aplikasi.</figcaption>
+                    </figure>
+
+                    <h4 class="custom-heading-blue mt-4">TUGAS</h4>
+
+                    <p>
+                        Pada Tugas kali ini kita akan membuat kodingan yang berfungsi untuk menambahkan 2 transaksi baru ke dalam daftar transaksi dengan menambahkan kodingan item kita pada bagian blok ListTile. Setelah kedua transaksi ditambahkan, daftar transaksi akan menampilkan semua item transaksi termasuk dua transaksi baru yang baru saja ditambahkan.
+                    </p>
+                    <figure class="report-image">
+                        <img src="img/Laprak2_Modul2/9.png" alt="Kode Penambahan Transaksi Baru">
+                        <figcaption>Gambar 9. Kode Penambahan Transaksi Baru.</figcaption>
+                    </figure>
+
+                    <figure class="report-image">
+                        <img src="img/Laprak2_Modul2/10.png" alt="Tampilan Daftar Transaksi Lengkap">
+                        <figcaption>Gambar 10. Tampilan Daftar Transaksi Lengkap.</figcaption>
+                    </figure>
+
+                    <figure class="report-image">
+                        <img src="img/Laprak2_Modul2/11.png" alt="Output Final Aplikasi Setelah Tugas">
+                        <figcaption>Gambar 11. Output Final Aplikasi Setelah Tugas.</figcaption>
+                    </figure>
+
+                    <h4 class="custom-heading-blue mt-4">KESIMPULAN</h4>
+                    <p>
+                        Pada Praktikum kali ini, dapat disimpulkan bahwa program ini berhasil menjalankan fungsinya dengan baik sesuai alur logika yang dirancang. Sistem mampu memproses masukan dengan akurat dan menghasilkan luaran yang efisien, sehingga dapat membantu menyelesaikan permasalahan teknis secara lebih praktis dan terstruktur.
                     </p>
                 `
             };
 
             const btnPemogramanWeb = document.getElementById("btn-pemograman-web");
+            const btnAplikasiMobile = document.getElementById("btn-aplikasi-mobile");
             const reportGrid = document.getElementById("report-grid");
             const reportItems = document.querySelectorAll(".report-item");
             const buttonsBacaLaporan = document.querySelectorAll(".btn-baca-laporan");
@@ -913,12 +1062,51 @@
             const detailTitle = document.getElementById("detail-title");
             const detailContent = document.getElementById("detail-content");
             const finishReadingButton = document.getElementById("finishReadingButton");
+            const repositoryButton = document.getElementById("repositoryButton");
 
             btnPemogramanWeb.addEventListener("click", function () {
+                // Update button states
                 btnPemogramanWeb.classList.add("active", "custom-btn-blue");
+                btnPemogramanWeb.classList.remove("custom-btn-outline");
+                btnAplikasiMobile.classList.remove("active", "custom-btn-blue");
+                btnAplikasiMobile.classList.add("custom-btn-outline");
 
+                // Show Pemograman Web items, hide Aplikasi Mobile items
                 reportItems.forEach(function (item) {
-                    item.style.display = "block";
+                    if (item.getAttribute("data-category") === "pemograman-web") {
+                        item.style.display = "block";
+                    } else {
+                        item.style.display = "none";
+                    }
+                    item.classList.remove("active-card");
+                });
+
+                buttonsBacaLaporan.forEach(function (button) {
+                    button.classList.remove("active");
+                });
+
+                detailSection.style.display = "none";
+
+                reportGrid.scrollIntoView({
+                    behavior: "smooth",
+                    block: "start"
+                });
+            });
+
+            btnAplikasiMobile.addEventListener("click", function () {
+                // Update button states
+                btnAplikasiMobile.classList.add("active", "custom-btn-blue");
+                btnAplikasiMobile.classList.remove("custom-btn-outline");
+                btnPemogramanWeb.classList.remove("active", "custom-btn-blue");
+                btnPemogramanWeb.classList.add("custom-btn-outline");
+
+                // Show Aplikasi Mobile items, hide Pemograman Web items
+                reportItems.forEach(function (item) {
+                    if (item.getAttribute("data-category") === "aplikasi-mobile") {
+                        item.style.display = "block";
+                    } else {
+                        item.style.display = "none";
+                    }
                     item.classList.remove("active-card");
                 });
 
@@ -945,6 +1133,14 @@
 
                     detailTitle.innerHTML = selectedReport.title;
                     detailContent.innerHTML = selectedReport.content;
+                    
+                    // Update repository link if available
+                    if (selectedReport.repositoryUrl) {
+                        repositoryButton.href = selectedReport.repositoryUrl;
+                    } else {
+                        repositoryButton.href = "https://github.com/Rohim110606/2411533015_abdurrohim_laravel-sisfo";
+                    }
+                    
                     detailSection.style.display = "block";
 
                     buttonsBacaLaporan.forEach(function (btn) {
