@@ -404,3 +404,29 @@ body {
 .report-filter-btn {
     min-width: 120px;
 }
+
+.placeholder-image {
+    background: linear-gradient(135deg, var(--color-cream), #eef4ff);
+    border: 2px dashed #ced4da;
+    border-radius: 8px;
+    min-height: 250px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    color: var(--color-navy);
+    font-size: 1rem;
+    text-align: center;
+    padding: 20px;
+}
+
+.placeholder-image i {
+    font-size: 3rem;
+    color: var(--color-blue);
+    margin-bottom: 10px;
+}
+
+.placeholder-image p {
+    margin: 0;
+    font-weight: 500;
+}

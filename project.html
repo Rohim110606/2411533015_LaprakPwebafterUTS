@@ -360,6 +360,33 @@
                         </div>
                     </div>
 
+                    <!-- Card 7 - Mobile App 4 (Baru) -->
+                    <div class="col report-item" data-category="aplikasi-mobile" style="display: none;">
+                        <div class="card h-100 custom-portfolio-card custom-report-card">
+                            <div class="report-icon-box">
+                                <i class="fa-solid fa-mobile-alt"></i>
+                            </div>
+
+                            <div class="card-body d-flex flex-column">
+                                <span class="badge bg-success align-self-start mb-3">
+                                    Aplikasi Mobile
+                                </span>
+
+                                <h5 class="card-title">Praktikum 4</h5>
+
+                                <p class="card-text small text-muted">
+                                    Laporan praktikum tentang navigasi dan passing data pada Flutter menggunakan aplikasi Expense Tracker.
+                                </p>
+
+                                <div class="mt-auto">
+                                    <button class="btn btn-sm custom-btn-blue w-100 btn-baca-laporan" type="button" data-report="mobile-lanjutan">
+                                        Baca Laporan
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
                 </div>
 
                 <!-- Detail Laporan -->
@@ -1080,6 +1107,54 @@
                 `
             };
 
+            laporanData["mobile-lanjutan"] = {
+                title: "Praktikum 4 - Navigasi dan Passing Data",
+                repositoryUrl: "https://github.com/Rohim110606/Praktikum_AplikasiMobile_A_Abdur-Rohim_2411533015",
+                content: `
+                    <h4 class="custom-heading-blue">PENDAHULUAN</h4>
+                    <p>
+                        Pengembangan aplikasi seluler sering kali membutuhkan pemindahan tampilan dari satu layar ke layar lainnya. Pada framework Flutter, proses perpindahan halaman dan pengiriman data diatur menggunakan konsep navigasi yang bekerja mirip seperti tumpukan kartu (stack). Melalui modul ini, mahasiswa diajar memahami bagaimana aplikasi dapat mengelola alur perpindahan antarlayar dengan rapi dan efisien.
+                    </p>
+                    <p>
+                        Selain berpindah halaman, suatu aplikasi juga perlu saling berbagi atau mengirimkan data antarlayar, misalnya dari daftar transaksi menuju halaman detail. Pengiriman data ini dilakukan dengan memanfaatkan Constructor pada widget tujuan. Dengan memahami konsep ini, alur data di dalam aplikasi dapat berjalan secara dinamis dan terstruktur sesuai dengan interaksi pengguna.
+                    </p>
+                    <p>
+                        Modul ini memberikan panduan praktis berupa pembuatan aplikasi pemantau keuangan (Expense Tracker) sederhana. Melalui pengerjaan kode secara langsung, mahasiswa dipandu untuk membuat struktur aplikasi multi-halaman yang modular, mulai dari halaman utama (Dashboard), halaman tambah transaksi, hingga halaman detail transaksi.
+                    </p>
+
+                    <h4 class="custom-heading-blue mt-4">TUJUAN</h4>
+                    <ul>
+                        <li>Mahasiswa mampu menggunakan fungsi Navigator.push untuk membuka halaman baru serta Navigator.pop untuk menutup halaman dan kembali ke layar sebelumnya.</li>
+                        <li>Mahasiswa mampu mengirimkan data (seperti teks judul, nominal, kategori, dan tanggal) dari satu halaman ke halaman lain menggunakan Constructor.</li>
+                        <li>Mahasiswa mampu membagi dan merapikan kode program ke dalam beberapa file terpisah agar aplikasi lebih mudah dikembangkan dan dikelola.</li>
+                    </ul>
+
+                    <h4 class="custom-heading-blue mt-4">ISI</h4>
+                    <p>
+                        Pertama-tama kita perlu membuat kodingan yang berfungsi untuk membuat aplikasi Flutter dengan MyApp sebagai widget utama dan DashboardScreen sebagai halaman pertama yang ditampilkan. MaterialApp mengatur tampilan dasar aplikasi, seperti menghilangkan banner debug.
+                    </p>
+                    <p>
+                        Selanjutnya, kita buat kodingan yang berfungsi untuk membuat halaman Dashboard Keuangan yang menampilkan sapaan pengguna, saldo utama, daftar transaksi terakhir, serta tombol + untuk menambahkan transaksi baru. Fungsi buildBalanceCard() digunakan untuk menampilkan saldo, sedangkan _buildTransactionList() menampilkan daftar transaksi seperti makan siang dan gaji bulanan beserta jumlah, kategori, dan tanggalnya. Ketika tombol atau transaksi ditekan, Navigator.push() digunakan untuk berpindah ke halaman lain, termasuk mengirimkan data transaksi ke halaman detail.
+                    </p>
+                    <p>
+                        Kemudian perlu kita buat kodingan yang berfungsi untuk membuat halaman Catat Transaksi yang memungkinkan pengguna memasukkan judul dan nominal transaksi melalui formulir. Form dan validator digunakan untuk memastikan data tidak boleh kosong sebelum disimpan, kemudian muncul pesan "Transaksi Berhasil Disimpan!" jika data valid. Setelah berhasil disimpan, Navigator.pop() digunakan untuk kembali ke halaman Dashboard sebelumnya.
+                    </p>
+                    <p>
+                        Setelah itu buat kodingan yang berfungsi untuk membuat halaman Detail Transaksi yang menampilkan informasi transaksi seperti judul, nominal, kategori, tanggal, dan status. Data transaksi dikirim melalui constructor menggunakan parameter required, sehingga setiap informasi wajib tersedia ketika halaman dibuka. Fungsi _buildDetailRow() digunakan untuk membuat tampilan baris detail agar lebih rapi dan menghindari penulisan kode yang berulang.
+                    </p>
+
+                    <h4 class="custom-heading-blue mt-4">TUGAS</h4>
+                    <p>
+                        Untuk membuat output seperti yang diinstruksikan, ada beberapa hal yang akan kita edit yaitu _selectDate, guna menampilkan dialog kalender (showDatePicker) dan mengformat tanggalnya ke DD/MM/YYYY. Kemudian kita tambahkan kodingan yang berfungsi untuk menambahkan kolom input tanggal dengan fitur pemilihan kalender.
+                    </p>
+
+                    <h4 class="custom-heading-blue mt-4">KESIMPULAN</h4>
+                    <p>
+                        Dari Praktikum kali ini dapat disimpulkan bahwa penguasaan fungsi navigasi (Navigator.push dan Navigator.pop) serta pengiriman data (passing data) melalui Constructor merupakan fondasi penting dalam membuat aplikasi Flutter yang interaktif dan dinamis. Dengan menerapkan pemisahan file yang rapi pada setiap halaman, aplikasi tidak hanya berjalan dengan baik saat berpindah layar dan menampilkan data detail, tetapi juga memiliki struktur kode yang bersih serta mudah dipelihara.
+                    </p>
+                `
+            };
+
             const btnPemogramanWeb = document.getElementById("btn-pemograman-web");
             const btnAplikasiMobile = document.getElementById("btn-aplikasi-mobile");
             const reportGrid = document.getElementById("report-grid");
@@ -1160,7 +1235,8 @@
                         "laravel-ui-bootstrap": "laporan-laravel-ui-bootstrap.html",
                         "mobile-basic": "laporan-mobile-basic.html",
                         "react-native": "laporan-react-native.html",
-                        "mobile-baru": "laporan-mobile-baru.html"
+                        "mobile-baru": "laporan-mobile-baru.html",
+                        "mobile-lanjutan": "laporan-mobile-lanjutan.html"
                     };
                     
                     const fileName = reportFiles[reportKey];
