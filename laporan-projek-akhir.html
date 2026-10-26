@@ -1,0 +1,352 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Projek Akhir</title>
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+
+    <style>
+        .report-detail-content,
+        .report-detail-content h4,
+        .report-detail-content h5,
+        .report-detail-content p,
+        .report-detail-content li {
+            font-family: "Times New Roman", Times, serif;
+            font-size: 12pt;
+        }
+
+        .report-detail-content p {
+            line-height: 1.75;
+            text-align: justify;
+        }
+
+        .report-detail-content ul {
+            padding-left: 1.5rem;
+        }
+
+        .report-image {
+            margin: 1rem 0 2rem;
+        }
+
+        .report-image img {
+            width: 100%;
+            max-height: 520px;
+            object-fit: contain;
+            border-radius: 8px;
+            border: 1px solid #e9ecef;
+            background-color: #f8f9fa;
+            box-shadow: 0 6px 18px rgba(0, 0, 0, 0.08);
+        }
+
+        .detail-report-card {
+            border-radius: 15px;
+        }
+
+        .report-placeholder {
+            background: #f4f7fb;
+            border: 2px dashed #9db7ff;
+            border-radius: 10px;
+            color: var(--color-navy);
+            min-height: 180px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            margin: 1rem 0 2rem;
+            padding: 1.5rem;
+            text-align: center;
+        }
+
+        .report-placeholder i {
+            color: var(--color-blue);
+            font-size: 2rem;
+            margin-bottom: 0.75rem;
+        }
+
+        .report-placeholder span {
+            display: block;
+            color: #6c757d;
+            font-size: 0.95rem;
+            margin-top: 0.35rem;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-light fixed-top custom-navbar-fixed">
+        <div class="container">
+            <a class="navbar-brand fw-bold" href="index.html">mydonatcandy</a>
+
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+                aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="index.html">Home</a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a class="nav-link" href="about.html">About</a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a class="nav-link" href="portfolio.html">Portfolio</a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="project.html">Project</a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a class="nav-link" href="contact.html">Contact</a>
+                    </li>
+                </ul>
+
+                <form class="d-flex ms-3" role="search">
+                    <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+                    <button class="btn btn-outline-secondary" type="submit">
+                        <i class="fas fa-search"></i>
+                    </button>
+                </form>
+            </div>
+        </div>
+    </nav>
+
+    <main>
+        <!-- Header -->
+        <section class="page-header text-center py-5" style="background-color: var(--color-cream);">
+            <div class="container">
+                <h1 class="display-5 fw-bold custom-heading-blue">Projek Akhir</h1>
+                <p class="lead text-muted mb-0">
+                    Laporan Projek Akhir Aplikasi Mobile
+                </p>
+            </div>
+        </section>
+
+        <!-- Detail Laporan -->
+        <section class="py-5">
+            <div class="container">
+                <div class="card shadow border-0 detail-report-card">
+                    <div class="card-body p-4 p-md-5">
+                        <span class="badge bg-success mb-3">Aplikasi Mobile</span>
+                        <h3 class="fw-bold custom-heading-blue mb-4">Projek Akhir</h3>
+                        <div class="report-detail-content">
+                            <h4 class="custom-heading-blue">PENDAHULUAN</h4>
+                            <p>
+                                Perkembangan teknologi aplikasi mobile menuntut proses perancangan yang tidak hanya berfokus pada estetika antarmuka, tetapi juga pada fungsionalitas dan integritas pengelolaan data. Berdasarkan serangkaian kegiatan praktikum sebelumnya yang telah dilakukan dari praktikum pertama hingga kelima, fokus utama umumnya masih terbatas pada perancangan antarmuka pengguna, navigasi dasar, serta pemanfaatan data yang bersifat statis. Oleh karena itu, penggabungan seluruh hasil praktikum ini menjadi sebuah proyek utuh menjadi langkah krusial untuk mentransformasikan desain konseptual menjadi aplikasi yang lebih nyata dan fungsional.
+                            </p>
+                            <p>
+                                Dalam pengembangan aplikasi ini, integrasi penyimpanan local seperti SQLite atau metode penyimpanan serupa diterapkan agar setiap data yang dimasukkan oleh pengguna dapat tersimpan secara permanen dan tidak hilang saat aplikasi ditutup. Selain aspek penyimpanan data, penambahan fitur autentikasi berupa halaman login dan register juga menjadi komponen penting untuk memastikan keamanan serta pengelolaan hak akses pengguna secara mandiri. Dengan tetap mempertahankan konsistensi desain UI/UX yang telah dirancang sebelumnya kecuali pada penyesuaian halaman autentikasi proyek ini diharapkan mampu memberikan pengalaman pengguna yang optimal.
+                            </p>
+                            <p>
+                                Secara keseluruhan, penyusunan proyek akhir ini tidak hanya bertujuan untuk memenuhi tugas akademik semata, tetapi juga sebagai sarana pembelajaran komprehensif dalam mengimplementasikan teori pemrograman bergerak ke dalam bentuk produk nyata. Melalui tahapan penggabungan fitur, pembuatan dokumentasi video penjelasan aplikasi, hingga proses build atau generate menjadi berkas instalasi (.APK), mahasiswa dapat memahami siklus pengembangan perangkat lunak secara utuh mulai dari tahap perancangan hingga tahap distribusi dasar.
+                            </p>
+
+                            <h4 class="custom-heading-blue mt-4">TUJUAN</h4>
+                            <ul>
+                                <li>Mahasiswa mampu mengintegrasikan hasil dari praktikum 1 sampai 5 kedalam satu kesatuan proyek aplikasi yang utuh dan fungsional dengan tetap mempertahankan konsistensi desain UI/UX yang telah dirancang sebelumnya</li>
+                                <li>Mahasiswa mampu menerapkan sistem penyimpanan lokal serta menambahkan fitur autentikasi pengguna berupa halaman login dan register agar data aplikasi dapat dikelola dan disimpan dengan baik</li>
+                                <li>Mahasiswa mampu menyelesaikan seluruh rangkaian proyek secara menyeluruh yang dibuktikan melalui pembuatan video penjelasan fungsionalitas aplikasi serta melakukan generate berkas aplikasi menjadi format APK</li>
+                            </ul>
+
+                            <h4 class="custom-heading-blue mt-4">ISI</h4>
+
+                            <p>
+                                <strong>1.</strong> Pertama-tama kita akan membuat kodingan yang berfungsi untuk menjalankan aplikasi Expense Tracker Proyek Akhir. Bagian import digunakan untuk memanggil file dan library yang dibutuhkan. Fungsi main() menjalankan aplikasi melalui runApp(), sedangkan MyApp mengatur tampilan dan navigasi aplikasi. MaterialApp digunakan untuk mengatur judul dan tema aplikasi yang berwarna merah. Pada bagian home, halaman login ditampilkan pertama kali saat aplikasi dibuka, sedangkan routes digunakan untuk berpindah ke halaman pengujian database (TestDBScreen) dengan membawa userId sebagai identitas pengguna.
+                            </p>
+
+                            <div class="report-image">
+                                <img src="img/projectakhir_project/Gambar 1.png" alt="Gambar 1">
+                            </div>
+
+                            <p>
+                                <strong>2.</strong> Kemudian kita buat kodingan yang berfungsi untuk mengatur perpindahan halaman pada aplikasi dan fungsi ini dijalankan ketika pengguna menekan salah satu menu navigasi, seperti Beranda, Riwayat, atau Profil. setState() digunakan untuk memperbarui tampilan aplikasi, sedangkan _selectedIndex menyimpan indeks halaman yang dipilih sehingga halaman yang sesuai dapat ditampilkan.
+                            </p>
+
+                            <div class="report-image">
+                                <img src="img/projectakhir_project/Gambar 2.png" alt="Gambar 2">
+                            </div>
+
+                            <p>
+                                <strong>3.</strong> Setelah itu kita perlu juga membuat kodingan yang berfungsi untuk memeriksa apakah email dan password sudah diisi dengan benar sebelum melakukan proses login. Selanjutnya, sistem mencocokkan email dan password yang dimasukkan pengguna dengan data yang tersimpan di database. Jika data sesuai, pengguna akan diarahkan ke halaman utama aplikasi, sedangkan jika tidak sesuai, sistem akan menampilkan pesan bahwa email atau password salah.
+                            </p>
+
+                            <div class="report-image">
+                                <img src="img/projectakhir_project/Gambar 3.png" alt="Gambar 3">
+                            </div>
+
+                            <p>
+                                <strong>4.</strong> Selanjutnya perlu juga kita membuat kodingan yang berfungsi untuk membuka halaman login sekaligus menghapus halaman sebelumnya dari riwayat navigasi. Dengan demikian, pengguna harus kembali melalui halaman login untuk masuk ke halaman utama aplikasi.
+                            </p>
+
+                            <div class="report-image">
+                                <img src="img/projectakhir_project/Gambar 4.png" alt="Gambar 4">
+                            </div>
+
+                            <p>
+                                <strong>5.</strong> Kemudian kita juga akan membuat kodingan yang berfungsi untuk memeriksa data yang dimasukkan pengguna sebelum menyimpan akun baru ke database. Data yang disimpan meliputi nama lengkap, email, dan password. Jika pendaftaran berhasil, sistem menampilkan pesan keberhasilan dan kembali ke halaman login, sedangkan jika terjadi kesalahan, sistem menampilkan pesan bahwa email sudah terdaftar.
+                            </p>
+
+                            <div class="report-image">
+                                <img src="img/projectakhir_project/Gambar 5.png" alt="Gambar 5">
+                            </div>
+
+                            <p>
+                                <strong>6.</strong> Setelah itu kita akan membuat kodingan yang berfungsi untuk mengambil data transaksi dari database dan menghitung total pemasukan, pengeluaran, serta saldo pengguna. Hasil pemeriksaan ditampilkan pada console untuk memudahkan pengembang mengecek data, sedangkan ringkasan hasilnya ditampilkan melalui pesan di aplikasi. Dengan fungsi ini, pengembang dapat memastikan bahwa data transaksi dan perhitungannya berjalan dengan baik.
+                            </p>
+
+                            <div class="report-image">
+                                <img src="img/projectakhir_project/Gambar 6.png" alt="Gambar 6">
+                            </div>
+
+                            <p>
+                                <strong>7.</strong> Selanjutnya kita akan membuat kodingan yang berfungsi untuk menyimpan data transaksi berupa nama transaksi, jumlah uang, kategori, dan tanggal. Data tersebut diterima dari halaman sebelumnya dan ditampilkan pada halaman detail transaksi. Dengan demikian, pengguna dapat melihat informasi transaksi secara lebih lengkap dan mudah dipahami.
+                            </p>
+
+                            <div class="report-image">
+                                <img src="img/projectakhir_project/Gambar 7.png" alt="Gambar 7">
+                            </div>
+
+                            <p>
+                                <strong>8.</strong> Setelah itu buat kodingan yang berfungsi untuk mengambil data transaksi berdasarkan ID pengguna dari database. Data yang berhasil diambil kemudian disimpan ke dalam variabel _allTransactions menggunakan setState() agar tampilan diperbarui. Dengan demikian, pengguna dapat melihat daftar riwayat transaksi yang tersimpan di aplikasi.
+                            </p>
+
+                            <div class="report-image">
+                                <img src="img/projectakhir_project/Gambar 8.png" alt="Gambar 8">
+                            </div>
+
+                            <p>
+                                <strong>9.</strong> Kemudian buat kodingan yang berfungsi untuk mengambil total pemasukan dan pengeluaran berdasarkan ID pengguna. Selanjutnya, sistem menghitung saldo dengan mengurangi total pengeluaran dari total pemasukan. Hasil perhitungan tersebut digunakan untuk mengetahui sisa saldo pengguna dalam aplikasi Expense Tracker.
+                            </p>
+
+                            <div class="report-image">
+                                <img src="img/projectakhir_project/Gambar 9.png" alt="Gambar 9">
+                            </div>
+
+                            <p>
+                                <strong>10.</strong> Setelah itu buat kodingan yang berfungsi untuk mengambil data transaksi, total pemasukan, dan total pengeluaran dari database berdasarkan ID pengguna. Selanjutnya, sistem menghitung saldo dengan mengurangi total pemasukan dengan total pengeluaran. Fungsi setState() digunakan untuk memperbarui tampilan agar informasi saldo dan transaksi terbaru dapat langsung ditampilkan pada halaman Dashboard.
+                            </p>
+
+                            <div class="report-image">
+                                <img src="img/projectakhir_project/Gambar 10.png" alt="Gambar 10">
+                            </div>
+
+                            <p>
+                                <strong>11.</strong> Terakhir kita perlu membuat kodingan yang berfungsi untuk memeriksa kelengkapan data transaksi sebelum menyimpannya ke database. Data yang disimpan meliputi judul, nominal, tipe transaksi, kategori, tanggal, dan ID pengguna. Setelah transaksi berhasil disimpan, aplikasi menampilkan pesan keberhasilan dan kembali ke halaman sebelumnya.
+                            </p>
+
+                            <div class="report-image">
+                                <img src="img/projectakhir_project/Gambar 11.png" alt="Gambar 11">
+                            </div>
+
+                            <p>
+                                <strong>Output Akhir:</strong>
+                            </p>
+
+                            <div class="report-image">
+                                <img src="img/projectakhir_project/Gambar 12.png" alt="Output Akhir Aplikasi">
+                            </div>
+
+                            <h4 class="custom-heading-blue mt-4">KESIMPULAN</h4>
+                            <p>
+                                Penggabungan hasil praktikum 1 sampai 5 berhasil dilakukan menjadi satu aplikasi yang utuh. Aplikasi ini sudah dilengkapi dengan penyimpanan data lokal serta fitur login dan register untuk mengelola akun pengguna. Selain itu, tampilan dan navigasi yang sebelumnya masih statis kini dapat digunakan secara interaktif dan mampu menyimpan data secara permanen. Pembuatan video dokumentasi dan file APK juga telah dilakukan sesuai dengan instruksi tugas. Melalui proyek ini, pemahaman dan keterampilan dalam mengembangkan aplikasi berbasis mobile menggunakan Flutter menjadi semakin baik.
+                            </p>
+                        </div>
+                        <div class="d-flex justify-content-end gap-2 mt-4">
+                            <a class="btn custom-btn-outline px-4" id="repositoryButton" href="https://github.com/Rohim110606/Praktikum_AplikasiMobile_A_Abdur-Rohim_2411533015/tree/praktikum5" target="_blank" rel="noopener noreferrer">
+                                <i class="fab fa-github me-2"></i>Repository
+                            </a>
+                            <a class="btn custom-btn-blue px-4" href="project.html" role="button">
+                                <i class="fas fa-arrow-left me-2"></i>Kembali
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer id="contact" class="bg-dark text-white pt-5 pb-3">
+        <div class="container">
+            <div class="row">
+
+                <div class="col-md-4 mb-4">
+                    <h5 class="fw-bold text-white mb-3">Abdur Rohim</h5>
+                    <p class="text-secondary small">
+                        Mahasiswa Informatika yang bersemangat dalam pengembangan web dan kepemimpinan tim.
+                        Siap berkontribusi dalam kegiatan yang menantang.
+                    </p>
+                </div>
+
+                <div class="col-md-3 offset-md-1 mb-4">
+                    <h5 class="fw-bold text-white mb-3">Quick Links</h5>
+                    <ul class="list-unstyled">
+                        <li>
+                            <a href="index.html" class="text-secondary text-decoration-none">Home</a>
+                        </li>
+
+                        <li>
+                            <a href="about.html" class="text-secondary text-decoration-none">About</a>
+                        </li>
+
+                        <li>
+                            <a href="portfolio.html" class="text-secondary text-decoration-none">Portfolio</a>
+                        </li>
+
+                        <li>
+                            <a href="project.html" class="text-secondary text-decoration-none">Project</a>
+                        </li>
+
+                        <li>
+                            <a href="contact.html" class="text-secondary text-decoration-none">Contact</a>
+                        </li>
+                    </ul>
+                </div>
+
+                <div class="col-md-4 mb-4">
+                    <h5 class="fw-bold text-white mb-3">Connect</h5>
+                    <div class="social-icons pt-1">
+                        <a href="#" class="text-white me-3">
+                            <i class="fab fa-facebook-f fa-lg"></i>
+                        </a>
+
+                        <a href="#" class="text-white me-3">
+                            <i class="fab fa-twitter fa-lg"></i>
+                        </a>
+
+                        <a href="#" class="text-white me-3">
+                            <i class="fab fa-linkedin-in fa-lg"></i>
+                        </a>
+
+                        <a href="#" class="text-white">
+                            <i class="fab fa-instagram fa-lg"></i>
+                        </a>
+                    </div>
+                </div>
+
+            </div>
+            
+            <hr class="text-secondary">
+
+            <div class="text-center pt-2">
+                <p class="mb-0 text-secondary">
+                    &copy; 2025 Abdur Rohim. All rights reserved.
+                </p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+
+</body>
+</html>
