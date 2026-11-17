@@ -1,0 +1,459 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Praktikum 7</title>
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+
+    <style>
+        .report-detail-content,
+        .report-detail-content h4,
+        .report-detail-content h5,
+        .report-detail-content p,
+        .report-detail-content li {
+            font-family: "Times New Roman", Times, serif;
+            font-size: 12pt;
+        }
+
+        .report-detail-content p {
+            line-height: 1.75;
+            text-align: justify;
+        }
+
+        .report-detail-content ul {
+            padding-left: 1.5rem;
+        }
+
+        .report-image {
+            margin: 1rem 0 2rem;
+        }
+
+        .report-image img {
+            width: 100%;
+            max-height: 520px;
+            object-fit: contain;
+            border-radius: 8px;
+            border: 1px solid #e9ecef;
+            background-color: #f8f9fa;
+            box-shadow: 0 6px 18px rgba(0, 0, 0, 0.08);
+        }
+
+        .detail-report-card {
+            border-radius: 15px;
+        }
+
+        .report-placeholder {
+            background: #f4f7fb;
+            border: 2px dashed #9db7ff;
+            border-radius: 10px;
+            color: var(--color-navy);
+            min-height: 180px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            margin: 1rem 0 2rem;
+            padding: 1.5rem;
+            text-align: center;
+        }
+
+        .report-placeholder i {
+            color: var(--color-blue);
+            font-size: 2rem;
+            margin-bottom: 0.75rem;
+        }
+
+        .report-placeholder span {
+            display: block;
+            color: #6c757d;
+            font-size: 0.95rem;
+            margin-top: 0.35rem;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-light fixed-top custom-navbar-fixed">
+        <div class="container">
+            <a class="navbar-brand fw-bold" href="index.html">mydonatcandy</a>
+
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+                aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="index.html">Home</a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a class="nav-link" href="about.html">About</a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a class="nav-link" href="portfolio.html">Portfolio</a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="project.html">Project</a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a class="nav-link" href="contact.html">Contact</a>
+                    </li>
+                </ul>
+
+                <form class="d-flex ms-3" role="search">
+                    <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+                    <button class="btn btn-outline-secondary" type="submit">
+                        <i class="fas fa-search"></i>
+                    </button>
+                </form>
+            </div>
+        </div>
+    </nav>
+
+    <main>
+        <!-- Header -->
+        <section class="page-header text-center py-5" style="background-color: var(--color-cream);">
+            <div class="container">
+                <h1 class="display-5 fw-bold custom-heading-blue">Praktikum 7</h1>
+                <p class="lead text-muted mb-0">
+                    Laporan Praktikum Aplikasi Mobile
+                </p>
+            </div>
+        </section>
+
+        <!-- Detail Laporan -->
+        <section class="py-5">
+            <div class="container">
+                <div class="card shadow border-0 detail-report-card">
+                    <div class="card-body p-4 p-md-5">
+                        <span class="badge bg-success mb-3">Aplikasi Mobile</span>
+                        <h3 class="fw-bold custom-heading-blue mb-4">Praktikum 7</h3>
+                        <div class="report-detail-content">
+
+                            <h4 class="custom-heading-blue">PENDAHULUAN</h4>
+                            <p>
+                                Modul praktikum ini merupakan kelanjutan dari pengembangan aplikasi "ResepKu" yang sebelumnya berfokus pada pengelolaan data dan status favorit. Pada tahap ini, aplikasi ditingkatkan tampilan antarmukanya agar lebih menarik dan informatif dengan mengintegrasikan elemen visual. Pengembang diperkenalkan pada cara memasukkan asset lokal seperti logo dan huruf (custom font) Poppins, serta cara menampilkan foto resep yang diambil secara langsung dari internet.
+                            </p>
+                            <p>
+                                Selain penambahan elemen visual, modul ini mengajarkan teknik pengelolaan media yang efisien. Aplikasi dilengkapi dengan penanganan kondisi khusus (loading state) saat foto sedang diunduh dan kondisi darurat (error state) yang menampilkan gambar cadangan (placeholder) apabila terjadi kegagalan jaringan atau URL rusak. Pengoptimalan memori juga diterapkan melalui pembatasan ukuran decode gambar (cacheWidth) agar aplikasi tetap ringan.
+                            </p>
+                            <p>
+                                Pengembangan dilanjutkan dengan implementasi variasi tampilan data menggunakan daftar memanjang (ListView) dan kisi berkolom (GridView). Pengguna diberikan fleksibilitas untuk beralih antara kedua moda tampilan tersebut melalui satu tombol di AppBar. Seluruh perubahan antarmuka ini dirancang agar tetap terhubung dan serasi dengan fitur-fitur yang telah dibuat pada modul sebelumnya, seperti sistem penyimpanan resep favorit.
+                            </p>
+
+                            <h4 class="custom-heading-blue mt-4">TUJUAN</h4>
+                            <ul>
+                                <li>Mahasiswa mampu mengelola Asset Lokal dan Font</li>
+                                <li>Mahasiswa mampu menampilkan dan mengelola Gambar dari Internet</li>
+                                <li>Mahasiswa mampu menyajikan data yang beragam dan fleksibel</li>
+                            </ul>
+
+                            <h4 class="custom-heading-blue mt-4">ISI</h4>
+
+                            <p>
+                                <strong>1.</strong> Pertama-tama kita akan membuat kodingan yang berfungsi untuk mengatur penggunaan aset gambar dari folder assets/images/ serta mengaktifkan fitur Material Design pada aplikasi Flutter. Selain itu, kode tersebut mendaftarkan font Poppins dengan tiga variasi ketebalan, yaitu Regular, Medium, dan Bold, agar tampilan teks aplikasi lebih menarik dan konsisten.
+                            </p>
+                            <figure class="report-image">
+                                <img src="img/Laprak_Mobile7/Gambar.1.png" alt="Gambar 1">
+                                <figcaption>Gambar 1.</figcaption>
+                            </figure>
+                            <figure class="report-image">
+                                <img src="img/Laprak_Mobile7/Gambar 1a.png" alt="Gambar 1a">
+                                <figcaption>Gambar 1a.</figcaption>
+                            </figure>
+
+                            <p>
+                                <strong>2.</strong> Setelah itu kita akan buat kodingan yang berfungsi untuk menampilkan gambar resep dari internet menggunakan Image.network, dilengkapi dengan tampilan loading saat gambar sedang dimuat dan tampilan gambar pengganti jika terjadi kesalahan. Properti cacheWidth digunakan untuk mengatur ukuran gambar saat diproses agar penggunaan memori lebih hemat.
+                            </p>
+                            <figure class="report-image">
+                                <img src="img/Laprak_Mobile7/Gambar 2.png" alt="Gambar 2">
+                                <figcaption>Gambar 2.</figcaption>
+                            </figure>
+
+                            <p>
+                                <strong>3.</strong> Selanjutnya kita buat kodingan yang berfungsi untuk menampilkan gambar resep dari URL menggunakan Image.network dengan ukuran tampilan menyesuaikan area melalui BoxFit.cover. Jika gambar masih diunduh, akan ditampilkan ikon sementara, sedangkan jika terjadi kesalahan seperti URL tidak valid atau koneksi terputus, aplikasi akan menampilkan gambar pengganti dari folder assets/images/placeholder.png.
+                            </p>
+                            <figure class="report-image">
+                                <img src="img/Laprak_Mobile7/Gambar 3.png" alt="Gambar 3">
+                                <figcaption>Gambar 3.</figcaption>
+                            </figure>
+
+                            <p>
+                                <strong>4.</strong> Lalu kita buat kodingan yang berfungsi untuk membuat halaman utama aplikasi menggunakan Scaffold yang memiliki AppBar berisi logo, nama aplikasi, tombol favorit, dan tombol pengaturan yang akan membuka halaman SettingsPage ketika ditekan. Pada bagian body, ListView.builder digunakan untuk menampilkan daftar resep dari dummyRecipes secara dinamis dengan setiap resep ditampilkan menggunakan widget RecipeTile.
+                            </p>
+                            <figure class="report-image">
+                                <img src="img/Laprak_Mobile7/Gambar 4.png" alt="Gambar 4">
+                                <figcaption>Gambar 4.</figcaption>
+                            </figure>
+                            <figure class="report-image">
+                                <img src="img/Laprak_Mobile7/Gambar 4a.png" alt="Gambar 4a">
+                                <figcaption>Gambar 4a.</figcaption>
+                            </figure>
+
+                            <p>
+                                <strong>5.</strong> Kemudian buat kodingan yang berfungsi untuk membuat tampilan kartu resep yang dapat ditekan untuk membuka halaman DetailPage, sekaligus memantau status favorit melalui FavoriteProvider. Gambar resep ditampilkan menggunakan RecipeImage, sedangkan tombol ikon hati digunakan untuk menambahkan atau menghapus resep dari daftar favorit, dengan warna merah sebagai penanda jika resep sudah menjadi favorit.
+                            </p>
+                            <figure class="report-image">
+                                <img src="img/Laprak_Mobile7/Gambar 5.png" alt="Gambar 5">
+                                <figcaption>Gambar 5.</figcaption>
+                            </figure>
+
+                            <p>
+                                <strong>6.</strong> Selanjutnya buat kodingan yang berfungsi untuk mengatur halaman utama agar dapat menampilkan resep dalam dua bentuk, yaitu list dan grid, menggunakan variabel _isGrid sebagai penanda tampilan yang sedang aktif. Tombol pada AppBar digunakan untuk mengganti tampilan melalui setState, sedangkan tombol favorit dan pengaturan tetap tersedia untuk membuka fitur masing-masing.
+                            </p>
+                            <figure class="report-image">
+                                <img src="img/Laprak_Mobile7/Gambar 6.png" alt="Gambar 6">
+                                <figcaption>Gambar 6.</figcaption>
+                            </figure>
+
+                            <p>
+                                <strong>7.</strong> Setelah itu buat kodingan yang berfungsi untuk membuat DetailPage sebagai halaman stateful yang menerima data resep dan mengatur jumlah porsi melalui variabel _servings. Nilai awal porsi diambil dari data resep saat halaman dibuka, kemudian fungsi _addServing() digunakan untuk menambah porsi dan _removeServing() untuk mengurangi porsi dengan batas minimum satu porsi menggunakan setState().
+                            </p>
+                            <figure class="report-image">
+                                <img src="img/Laprak_Mobile7/Gambar 7.png" alt="Gambar 7">
+                                <figcaption>Gambar 7.</figcaption>
+                            </figure>
+                            <figure class="report-image">
+                                <img src="img/Laprak_Mobile7/Gambar 7a.png" alt="Gambar 7a">
+                                <figcaption>Gambar 7a.</figcaption>
+                            </figure>
+                            <figure class="report-image">
+                                <img src="img/Laprak_Mobile7/Gambar 7b.png" alt="Gambar 7b">
+                                <figcaption>Gambar 7b.</figcaption>
+                            </figure>
+
+                            <p>
+                                <strong>8.</strong> Setelah itu buat kodingan yang berfungsi untuk mengatur fitur penyaringan resep berdasarkan jenis masakan menggunakan variabel _cuisine, serta menentukan apakah resep ditampilkan dalam bentuk list atau grid melalui _isGrid. Jika _cuisine bernilai null, semua resep akan ditampilkan, sedangkan jika jenis masakan dipilih, filteredRecipes hanya berisi resep yang sesuai dengan pilihan tersebut.
+                            </p>
+                            <figure class="report-image">
+                                <img src="img/Laprak_Mobile7/Gambar 8.png" alt="Gambar 8">
+                                <figcaption>Gambar 8.</figcaption>
+                            </figure>
+
+                            <p>
+                                <strong>9.</strong> Kemudian buat kodingan yang berfungsi untuk membuat pilihan filter jenis masakan menggunakan ChoiceChip yang dapat digeser secara horizontal, mulai dari pilihan "Semua" hingga jenis masakan yang tersedia. Ketika salah satu pilihan ditekan, nilai _cuisine diperbarui menggunakan setState(), sehingga daftar resep di bawahnya otomatis ditampilkan dalam bentuk grid atau list sesuai pilihan _isGrid dan hanya menampilkan resep yang sesuai dengan filter.
+                            </p>
+                            <figure class="report-image">
+                                <img src="img/Laprak_Mobile7/Gambar 9.png" alt="Gambar 9">
+                                <figcaption>Gambar 9.</figcaption>
+                            </figure>
+
+                            <p>
+                                <strong>10.</strong> Lalu buat kodingan yang berfungsi untuk mengubah metode _buildList() dan _buildGrid() pada file lib/pages/home_page.dart agar dapat menampilkan data resep yang sudah difilter berdasarkan kategori. Kedua metode tersebut perlu menerima parameter List&lt;Recipe&gt; recipes dengan mengimpor model recipe.dart, kemudian menggunakan recipes.length dan recipes[index] untuk menampilkan resep. Dengan demikian, hasil filter kategori akan tetap sesuai, baik ketika pengguna memilih tampilan list maupun grid.
+                            </p>
+                            <figure class="report-image">
+                                <img src="img/Laprak_Mobile7/Gambar 10.png" alt="Gambar 10">
+                                <figcaption>Gambar 10.</figcaption>
+                            </figure>
+                            <figure class="report-image">
+                                <img src="img/Laprak_Mobile7/Gambar 10a.png" alt="Gambar 10a">
+                                <figcaption>Gambar 10a.</figcaption>
+                            </figure>
+                            <figure class="report-image">
+                                <img src="img/Laprak_Mobile7/Gambar 10b.png" alt="Gambar 10b">
+                                <figcaption>Gambar 10b.</figcaption>
+                            </figure>
+
+                            <p>
+                                <strong>11.</strong> Selanjutnya buat kodingan yang berfungsi untuk membuat halaman Favorit Saya dengan AppBar yang menampilkan judul dan tombol untuk menghapus seluruh resep favorit. Consumer&lt;FavoriteProvider&gt; digunakan untuk memantau jumlah resep favorit, sehingga tombol hapus otomatis dinonaktifkan jika belum ada resep favorit dan akan menampilkan dialog konfirmasi ketika ditekan.
+                            </p>
+                            <figure class="report-image">
+                                <img src="img/Laprak_Mobile7/Gambar 11.png" alt="Gambar 11">
+                                <figcaption>Gambar 11.</figcaption>
+                            </figure>
+
+                            <p>
+                                <strong>12.</strong> Kemudian kita buat kodingan yang berfungsi untuk membuat pengguna dapat menghapus resep dari daftar favorit dengan cara menggeser item ke kiri. Widget ini menggunakan ValueKey(recipe.id) sebagai identitas unik, DismissDirection.endToStart untuk menentukan arah geser, serta latar belakang merah dengan ikon hapus. Ketika item berhasil dihapus, fungsi favorite.toggle(recipe) dijalankan dan aplikasi menampilkan SnackBar yang berisi nama resep tersebut.
+                            </p>
+                            <figure class="report-image">
+                                <img src="img/Laprak_Mobile7/Gambar 12.png" alt="Gambar 12">
+                                <figcaption>Gambar 12.</figcaption>
+                            </figure>
+
+                            <p>
+                                <strong>13.</strong> Setelah itu buat kodingan yang berfungsi untuk menambahkan thumbnail gambar resep pada bagian leading di dalam ListTile pada FavoritePage. Gambar ditampilkan menggunakan RecipeImage yang dibungkus dengan ClipRRect agar sudutnya membulat, serta SizedBox berukuran 56 × 56 dp supaya tampilannya seragam dengan halaman utama. Sementara itu, judul resep, kategori masakan, dan tombol untuk menghapus resep dari daftar favorit tetap dipertahankan.
+                            </p>
+                            <figure class="report-image">
+                                <img src="img/Laprak_Mobile7/Gambar 13.png" alt="Gambar 13">
+                                <figcaption>Gambar 13.</figcaption>
+                            </figure>
+                            <figure class="report-image">
+                                <img src="img/Laprak_Mobile7/Gambar 13a.png" alt="Gambar 13a">
+                                <figcaption>Gambar 13a.</figcaption>
+                            </figure>
+                            <figure class="report-image">
+                                <img src="img/Laprak_Mobile7/Gambar 13b.png" alt="Gambar 13b">
+                                <figcaption>Gambar 13b.</figcaption>
+                            </figure>
+
+                            <p>
+                                <strong>14.</strong> Selanjutnya buat kodingan yang berfungsi untuk menambahkan paket cached_network_image, kemudian ubah struktur tampilan halaman detail pada file lib/pages/detail_page.dart dengan menggunakan CustomScrollView dan SliverAppBar sebagai pengganti AppBar biasa. Atur SliverAppBar dengan pinned: true dan expandedHeight: 260 agar bilah judul tetap terlihat saat halaman digulir. Selanjutnya, gunakan FlexibleSpaceBar untuk menampilkan judul resep dan foto sebagai latar belakang melalui CachedNetworkImage, yang dilengkapi indikator saat gambar dimuat serta gambar pengganti jika terjadi kesalahan. Dengan begitu, gambar dapat disimpan dalam cache disk sehingga tidak perlu diunduh kembali setiap kali aplikasi dibuka.
+                            </p>
+                            <figure class="report-image">
+                                <img src="img/Laprak_Mobile7/Gambar 14.png" alt="Gambar 14">
+                                <figcaption>Gambar 14.</figcaption>
+                            </figure>
+
+                            <p>
+                                <strong>15.</strong> Setelah itu buat kodingan yang berfungsi untuk masukkan informasi ringkasan resep, pengaturan jumlah porsi, dan judul bagian bahan ke dalam SliverToBoxAdapter. Widget ini digunakan sebagai pembungkus Column agar elemen-elemen tersebut dapat ditampilkan dan digulir bersama dalam CustomScrollView. Di dalamnya terdapat informasi kategori resep, Card untuk mengatur jumlah porsi (_servings), perhitungan total kalori, serta judul bagian Bahan.
+                            </p>
+                            <figure class="report-image">
+                                <img src="img/Laprak_Mobile7/Gambar 15.png" alt="Gambar 15">
+                                <figcaption>Gambar 15.</figcaption>
+                            </figure>
+
+                            <p>
+                                <strong>16.</strong> Terakhir kita buat kodingan yang berfungsi tampilkan daftar bahan resep menggunakan SliverList.builder yang dibungkus dengan SliverPadding. Berbeda dengan penggunaan perulangan for di dalam ListView, metode ini menampilkan setiap bahan menggunakan ListTile secara bertahap sesuai kebutuhan tampilan (lazy loading). Dengan itemCount: recipe.ingredients.length, seluruh bahan resep dapat ditampilkan di dalam CustomScrollView dengan proses pengguliran yang lebih efisien.
+                            </p>
+                            <figure class="report-image">
+                                <img src="img/Laprak_Mobile7/Gambar 16.png" alt="Gambar 16">
+                                <figcaption>Gambar 16.</figcaption>
+                            </figure>
+
+                            <p><strong>17.</strong> Selanjutnya kita akan membuat Langkah D2.</p>
+                            <figure class="report-image">
+                                <img src="img/Laprak_Mobile7/Gambar 17.png" alt="Gambar 17">
+                                <figcaption>Gambar 17.</figcaption>
+                            </figure>
+
+                            <p><strong>18.</strong> Terakhir kita akan membuat dan mengerjakan Langkah C3.</p>
+
+                            <p>Lebar kartu = 164 dp</p>
+                            <p>Tinggi kartu = 218.67 dp</p>
+
+                            <h4 class="custom-heading-blue mt-4">PERTANYAAN REFLEKTIF</h4>
+
+                            <p>
+                                Pada skenario 3 dan 4 Langkah D.2, status favorit tetap sama walaupun tampilan berganti dari grid ke list. Padahal RecipeGridCard dan RecipeTile adalah dua widget yang berbeda. Jelaskan mengapa, dengan mengaitkannya pada Modul 6.
+                            </p>
+                            <p>
+                                Status favorit tetap terjaga meskipun pengguna berganti tampilan antara RecipeGridCard dan RecipeTile, karena data favorit dikelola secara terpusat oleh FavoriteProvider yang merupakan turunan ChangeNotifier dari Modul 6 dan dibagikan ke seluruh aplikasi melalui MultiProvider. Saat ikon hati ditekan, fungsi FavoriteProvider.toggle() akan memperbarui daftar _items dan menjalankan notifyListeners(). Dengan demikian, RecipeGridCard maupun RecipeTile yang menggunakan context.watch&lt;FavoriteProvider&gt;().isFavorite(recipe) akan selalu mendapatkan informasi status favorit terbaru dari sumber data yang sama.
+                            </p>
+
+                            <p>
+                                Di dalam loadingBuilder terdapat baris if (loadingProgress == null) return child;. Apa yang akan tampil jika baris tersebut dihapus? Jelaskan alasannya.
+                            </p>
+                            <p>
+                                Jika baris if (loadingProgress == null) return child; dihapus, gambar resep tidak akan ditampilkan meskipun proses pengunduhan sudah selesai. Akibatnya, aplikasi akan terus menampilkan tampilan loading berupa kotak dengan ikon Icons.restaurant_menu. Hal ini terjadi karena loadingBuilder dipanggil berulang kali selama gambar diunduh, dan nilai loadingProgress akan menjadi null ketika proses pengunduhan selesai. Kondisi tersebut digunakan sebagai penanda agar widget child dikembalikan sehingga gambar resep dapat ditampilkan pada layar.
+                            </p>
+
+                            <p>
+                                Hitung berapa pixel foto thumbnail yang di-decode dengan dan tanpa cacheWidth: 168, jika foto asli dari server berukuran 1200 × 800 pixel. Apa akibatnya bagi memory ketika datanya menjadi 50 resep pada Modul 8?
+                            </p>
+                            <p>
+                                Tanpa menggunakan cacheWidth, gambar akan diproses dengan ukuran piksel aslinya sehingga membutuhkan memori lebih besar. Sebaliknya, penggunaan cacheWidth: 168 akan memperkecil ukuran gambar yang diproses dengan tetap mempertahankan rasio aspek, sehingga jumlah piksel dan penggunaan memori menjadi lebih sedikit. Jika jumlah resep bertambah pada Modul 8, penggunaan gambar tanpa cacheWidth dapat membebani RAM perangkat, menyebabkan proses scrolling menjadi lambat, bahkan berisiko membuat aplikasi terhenti karena kehabisan memori.
+                            </p>
+
+                            <p>
+                                Logo memakai Image.asset, sedangkan foto resep memakai Image.network. Mengapa logo tidak sebaiknya diambil dari internet, dan mengapa foto resep tidak dimasukkan ke asset?
+                            </p>
+                            <p>
+                                Logo aplikasi menggunakan Image.asset karena merupakan gambar identitas yang bersifat tetap dan harus dapat ditampilkan langsung tanpa memerlukan koneksi internet. Sementara itu, foto resep menggunakan Image.network karena datanya bersifat dinamis dan dapat terus bertambah dari server. Jika seluruh foto resep disimpan dalam folder assets, ukuran file instalasi aplikasi (APK) akan menjadi lebih besar dan setiap penambahan atau perubahan foto mengharuskan pengguna memperbarui aplikasi.
+                            </p>
+
+                            <h4 class="custom-heading-blue mt-4">KESIMPULAN</h4>
+                            <p>
+                                Dari praktikum kita kali ini, aplikasi "ResepKu" berhasil ditingkatkan dari sekadar tampilan teks biasa menjadi aplikasi yang kaya visual dan responsif melalui penerapan asset lokal, custom font, serta pemuatan foto dari internet yang aman dari kendala koneksi.
+                            </p>
+
+                        </div>
+                        <div class="d-flex justify-content-end gap-2 mt-4">
+                                <a class="btn custom-btn-outline px-4" id="repositoryButton" href="https://github.com/Rohim110606/Abdur-Rohim_2411533015_Aplikasi-Mobile_A_Resepku.git" target="_blank" rel="noopener noreferrer">
+                                    <i class="fab fa-github me-2"></i>Repository
+                                </a>
+                            <a class="btn custom-btn-blue px-4" href="project.html" role="button">
+                                <i class="fas fa-arrow-left me-2"></i>Kembali
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer id="contact" class="bg-dark text-white pt-5 pb-3">
+        <div class="container">
+            <div class="row">
+
+                <div class="col-md-4 mb-4">
+                    <h5 class="fw-bold text-white mb-3">Abdur Rohim</h5>
+                    <p class="text-secondary small">
+                        Mahasiswa Informatika yang bersemangat dalam pengembangan web dan kepemimpinan tim.
+                        Siap berkontribusi dalam kegiatan yang menantang.
+                    </p>
+                </div>
+
+                <div class="col-md-3 offset-md-1 mb-4">
+                    <h5 class="fw-bold text-white mb-3">Quick Links</h5>
+                    <ul class="list-unstyled">
+                        <li>
+                            <a href="index.html" class="text-secondary text-decoration-none">Home</a>
+                        </li>
+
+                        <li>
+                            <a href="about.html" class="text-secondary text-decoration-none">About</a>
+                        </li>
+
+                        <li>
+                            <a href="portfolio.html" class="text-secondary text-decoration-none">Portfolio</a>
+                        </li>
+
+                        <li>
+                            <a href="project.html" class="text-secondary text-decoration-none">Project</a>
+                        </li>
+
+                        <li>
+                            <a href="contact.html" class="text-secondary text-decoration-none">Contact</a>
+                        </li>
+                    </ul>
+                </div>
+
+                <div class="col-md-4 mb-4">
+                    <h5 class="fw-bold text-white mb-3">Connect</h5>
+                    <div class="social-icons pt-1">
+                        <a href="#" class="text-white me-3">
+                            <i class="fab fa-facebook-f fa-lg"></i>
+                        </a>
+
+                        <a href="#" class="text-white me-3">
+                            <i class="fab fa-twitter fa-lg"></i>
+                        </a>
+
+                        <a href="#" class="text-white me-3">
+                            <i class="fab fa-linkedin-in fa-lg"></i>
+                        </a>
+
+                        <a href="#" class="text-white">
+                            <i class="fab fa-instagram fa-lg"></i>
+                        </a>
+                    </div>
+                </div>
+
+            </div>
+
+            <hr class="text-secondary">
+
+            <div class="text-center pt-2">
+                <p class="mb-0 text-secondary">
+                    &copy; 2025 Abdur Rohim. All rights reserved.
+                </p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+
+</body>
+</html>
