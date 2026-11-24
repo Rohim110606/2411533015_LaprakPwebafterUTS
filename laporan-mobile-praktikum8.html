@@ -1,0 +1,565 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Praktikum 8</title>
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+
+    <style>
+        .report-detail-content,
+        .report-detail-content h4,
+        .report-detail-content h5,
+        .report-detail-content p,
+        .report-detail-content li {
+            font-family: "Times New Roman", Times, serif;
+            font-size: 12pt;
+        }
+
+        .report-detail-content p {
+            line-height: 1.75;
+            text-align: justify;
+        }
+
+        .report-detail-content ul {
+            padding-left: 1.5rem;
+        }
+
+        .report-image {
+            margin: 1rem 0 2rem;
+        }
+
+        .report-image img {
+            width: 100%;
+            max-height: 520px;
+            object-fit: contain;
+            border-radius: 8px;
+            border: 1px solid #e9ecef;
+            background-color: #f8f9fa;
+            box-shadow: 0 6px 18px rgba(0, 0, 0, 0.08);
+        }
+
+        .detail-report-card {
+            border-radius: 15px;
+        }
+
+        .report-placeholder {
+            background: #f4f7fb;
+            border: 2px dashed #9db7ff;
+            border-radius: 10px;
+            color: var(--color-navy);
+            min-height: 180px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            margin: 1rem 0 2rem;
+            padding: 1.5rem;
+            text-align: center;
+        }
+
+        .report-placeholder i {
+            color: var(--color-blue);
+            font-size: 2rem;
+            margin-bottom: 0.75rem;
+        }
+
+        .report-placeholder span {
+            display: block;
+            color: #6c757d;
+            font-size: 0.95rem;
+            margin-top: 0.35rem;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-light fixed-top custom-navbar-fixed">
+        <div class="container">
+            <a class="navbar-brand fw-bold" href="index.html">mydonatcandy</a>
+
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+                aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="index.html">Home</a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a class="nav-link" href="about.html">About</a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a class="nav-link" href="portfolio.html">Portfolio</a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="project.html">Project</a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a class="nav-link" href="contact.html">Contact</a>
+                    </li>
+                </ul>
+
+                <form class="d-flex ms-3" role="search">
+                    <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+                    <button class="btn btn-outline-secondary" type="submit">
+                        <i class="fas fa-search"></i>
+                    </button>
+                </form>
+            </div>
+        </div>
+    </nav>
+
+    <main>
+        <!-- Header -->
+        <section class="page-header text-center py-5" style="background-color: var(--color-cream);">
+            <div class="container">
+                <h1 class="display-5 fw-bold custom-heading-blue">Praktikum 8</h1>
+                <p class="lead text-muted mb-0">
+                    Laporan Praktikum Aplikasi Mobile
+                </p>
+            </div>
+        </section>
+
+        <!-- Detail Laporan -->
+        <section class="py-5">
+            <div class="container">
+                <div class="card shadow border-0 detail-report-card">
+                    <div class="card-body p-4 p-md-5">
+                        <span class="badge bg-success mb-3">Aplikasi Mobile</span>
+                        <h3 class="fw-bold custom-heading-blue mb-4">Praktikum 8</h3>
+                        <div class="report-detail-content">
+
+                            <h4 class="custom-heading-blue">PENDAHULUAN</h4>
+                            <p>
+                                Pada praktikum kali ini kita akan membahas penerapan HTTP request dan integrasi REST API pada aplikasi ResepKu. Pada modul-modul sebelumnya, aplikasi ResepKu masih menggunakan enam resep statis (dummy) yang ditulis langsung di dalam kode program. Melalui modul ini, sumber data aplikasi beralih sepenuhnya ke layanan API eksternal untuk mengambil data resep dari server. Integrasi API ini melanjutkan konsep pemrograman asinkron dan pemisahan data dari tampilan yang telah dipelajari pada pertemuan teori maupun praktikum sebelumnya. Mahasiswa diarahkan untuk mengubah struktur model data melalui factory fromJson agar mampu mengonversi format JSON menjadi objek model Recipe, serta memusatkan komunikasi jaringan ke dalam kelas RecipeService menggunakan package http. Selain mengambil data melalui metode GET, modul ini juga mencakup penanganan kondisi antarmuka saat proses pemuatan berlangsung, ketika terjadi gangguan jaringan atau kesalahan server, serta fitur pembaruan data melalui pull-to-refresh dan pengiriman data baru menggunakan metode POST. Dengan pendekatan tersebut, mahasiswa memahami alur kerja aplikasi mobile yang berinteraksi dengan server sungguhan maupun simulasi API secara terstruktur dan aman.
+                            </p>
+
+                            <h4 class="custom-heading-blue mt-4">TUJUAN</h4>
+                            <ul>
+                                <li>Mahasiswa mampu memahami struktur respons JSON dari REST API serta mengimplementasikan factory fromJson pada model</li>
+                                <li>Mahasiswa mampu melakukan request GET menggunakan package http di dalam kelas RecipeService serta menampilkan daftar resep melalui FutureBuilder lengkap dengan loading state, error state, tombol coba lagi, dan pull-to-refresh</li>
+                                <li>Mahasiswa mampu mengirimkan data resep baru melalui form dengan request POST, melakukan validasi input, serta menangani hasil maupun kegagalan proses</li>
+                            </ul>
+
+                            <h4 class="custom-heading-blue mt-4">ISI</h4>
+
+                            <p>
+                                <strong>1.</strong> Pertama-tama kita akan membuat kodingan yang berfungsi untuk menginisialisasi aplikasi ResepKu dengan menerapkan MultiProvider untuk mengelola data favorit, tema aplikasi, dan layanan resep agar dapat digunakan oleh berbagai halaman
+                            </p>
+                            <figure class="report-image">
+                                <img src="img/Laprak_Mobile8/G1.png" alt="Gambar 1">
+                            </figure>
+
+                            <p>
+                                <strong>2.</strong> Setelah itu kita akan buat kodingan yang berfungsi untuk menyimpan data resep makanan, seperti nama, jenis masakan, tingkat kesulitan, waktu memasak, bahan, dan langkah-langkah pembuatan. Konstruktor digunakan untuk menginisialisasi data resep, sedangkan totalTimeMinutes menghitung total waktu memasak dan Recipe.fromJson() mengubah data JSON menjadi objek Recipe dengan memberikan nilai bawaan apabila terdapat data yang kosong atau tidak tersedia.
+                            </p>
+                            <figure class="report-image">
+                                <img src="img/Laprak_Mobile8/G2.png" alt="Gambar 2">
+                            </figure>
+
+                            <p>
+                                <strong>3.</strong> Selanjutnya buat kodingan yang berfungsi untuk mengambil data resep makanan dari API DummyJSON menggunakan metode HTTP GET, kemudian mengubah data JSON menjadi daftar objek Recipe. Selain itu, kode ini mengatur batas waktu koneksi selama 10 detik, memeriksa status respons server, menangani kesalahan melalui RecipeServiceException, serta menutup koneksi HTTP setelah tidak digunakan
+                            </p>
+                            <figure class="report-image">
+                                <img src="img/Laprak_Mobile8/G3.png" alt="Gambar 3">
+                            </figure>
+
+                            <p>
+                                <strong>4.</strong> Kemudian buat kodingan yang berfungsi untuk mengatur proses pengambilan dan pemuatan ulang data resep pada halaman utama (HomePage), dengan variabel _isGrid untuk menentukan tampilan daftar resep dan _recipesFuture untuk menyimpan proses pengambilan data dari API. Fungsi initState() mengambil data saat halaman pertama kali dibuka, _reload() memuat ulang data, sedangkan _refresh() menjalankan proses penyegaran data dan menangani kesalahan yang nantinya ditampilkan melalui FutureBuilder
+                            </p>
+                            <figure class="report-image">
+                                <img src="img/Laprak_Mobile8/G4.png" alt="Gambar 4">
+                            </figure>
+
+                            <p>
+                                <strong>5.</strong> Lalu buat kodingan yang berfungsi untuk mengatur tampilan berdasarkan proses pengambilan data resep dari API, seperti menampilkan indikator loading saat data sedang dimuat, pesan kesalahan jika pengambilan data gagal, dan pesan apabila data resep kosong. Jika data berhasil diperoleh, aplikasi menampilkan resep dalam bentuk daftar atau grid sesuai pilihan pengguna serta menyediakan fitur RefreshIndicator untuk memperbarui data dengan menarik layar ke bawah
+                            </p>
+                            <figure class="report-image">
+                                <img src="img/Laprak_Mobile8/G5.png" alt="Gambar 5">
+                            </figure>
+
+                            <p>
+                                <strong>6.</strong> Selanjutnya kita perlu juga membuat kodingan yang berfungsi untuk menampilkan data resep, yaitu _buildList() yang menyusun resep secara vertikal menggunakan ListView.builder dan _buildGrid() yang menampilkan resep dalam bentuk kotak menggunakan GridView.builder. Pada tampilan grid, setiap resep disusun menjadi dua kolom dengan jarak antaritem sebesar 8 piksel, sedangkan data resep ditampilkan menggunakan widget RecipeTile atau RecipeGridCard
+                            </p>
+                            <figure class="report-image">
+                                <img src="img/Laprak_Mobile8/G6.png" alt="Gambar 6">
+                            </figure>
+
+                            <p>
+                                <strong>7.</strong> Selanjutnya buat kodingan yang berfungsi untuk menampilkan pemberitahuan ketika aplikasi mengalami kesalahan saat memuat data, seperti kegagalan koneksi internet. Tampilan ini terdiri dari ikon gangguan jaringan, pesan kesalahan, serta tombol Coba lagi yang menjalankan fungsi onRetry agar aplikasi dapat mengulangi proses pengambilan data
+                            </p>
+                            <figure class="report-image">
+                                <img src="img/Laprak_Mobile8/G7.png" alt="Gambar 7">
+                            </figure>
+
+                            <p>
+                                <strong>8.</strong> Setelah itu buat kodingan yang berfungsi untuk menampilkan informasi resep dalam bentuk daftar, meliputi gambar, nama makanan, jenis masakan, total waktu memasak, dan rating. Widget ini juga menggunakan FavoriteProvider untuk menambahkan atau menghapus resep dari daftar favorit serta Navigator.push untuk membuka halaman detail resep ketika pengguna memilih salah satu resep
+                            </p>
+                            <figure class="report-image">
+                                <img src="img/Laprak_Mobile8/G8.png" alt="Gambar 8">
+                            </figure>
+
+                            <p>
+                                <strong>9.</strong> Kemudian buat kodingan yang berfungsi untuk menampilkan resep makanan dalam bentuk kartu (Card) dengan susunan gambar, nama makanan, rating, dan total waktu memasak, serta menggunakan InkWell agar kartu dapat ditekan untuk membuka halaman detail resep. Selain itu, terdapat tombol ikon hati yang terhubung dengan FavoriteProvider untuk menambahkan atau menghapus resep dari daftar favorit, sehingga tampilannya otomatis berubah sesuai status favorit
+                            </p>
+                            <figure class="report-image">
+                                <img src="img/Laprak_Mobile8/G9.png" alt="Gambar 9">
+                            </figure>
+
+                            <p>
+                                <strong>10.</strong> Lalu buat kodingan yang berfungsi untuk menampilkan gambar resep dari internet menggunakan Image.network dengan pengaturan BoxFit.cover agar gambar memenuhi area yang tersedia, serta cacheWidth untuk mengurangi penggunaan memori. Widget ini juga menyediakan tampilan sementara berupa ikon makanan ketika gambar sedang dimuat (loading state) dan menampilkan gambar pengganti (placeholder) apabila gambar gagal dimuat akibat URL yang salah atau masalah koneksi internet
+                            </p>
+                            <figure class="report-image">
+                                <img src="img/Laprak_Mobile8/G10.png" alt="Gambar 10">
+                            </figure>
+
+                            <p>
+                                <strong>11.</strong> Selanjutnya buat kodingan yang berfungsi untuk menampilkan informasi lengkap mengenai resep makanan yang dipilih, dengan menggunakan StatefulWidget agar jumlah porsi dapat diubah oleh pengguna. Fungsi initState() mengatur jumlah porsi awal sesuai data resep, sedangkan _addServing() menambah jumlah porsi dan _removeServing() menguranginya dengan ketentuan jumlah porsi tidak boleh kurang dari satu
+                            </p>
+                            <figure class="report-image">
+                                <img src="img/Laprak_Mobile8/G11.png" alt="Gambar 11">
+                            </figure>
+
+                            <p>
+                                <strong>12.</strong> Setelah itu buat kodingan yang berfungsi untuk menampilkan bagian langkah-langkah pembuatan resep dengan judul Langkah yang hanya muncul apabila data instruksi tersedia. Setiap langkah ditampilkan menggunakan SliverList.builder dengan nomor urut dalam bentuk CircleAvatar, sehingga pengguna dapat membaca tahapan memasak secara berurutan, kemudian diakhiri dengan jarak tambahan di bagian bawah halaman.
+                            </p>
+                            <figure class="report-image">
+                                <img src="img/Laprak_Mobile8/G12.png" alt="Gambar 12">
+                            </figure>
+
+                            <p>
+                                <strong>13.</strong> Kemudian buat kodingan yang berfungsi untuk menampilkan halaman khusus untuk menyimpan dan mengelola resep makanan yang telah ditandai sebagai favorit oleh pengguna. Widget Consumer&lt;FavoriteProvider&gt; digunakan untuk memantau perubahan jumlah resep favorit, sedangkan tombol Hapus semua akan dinonaktifkan apabila tidak ada resep favorit dan akan menampilkan dialog konfirmasi ketika pengguna ingin menghapus seluruh daftar favorit
+                            </p>
+                            <figure class="report-image">
+                                <img src="img/Laprak_Mobile8/G13.png" alt="Gambar 13">
+                            </figure>
+
+                            <p>
+                                <strong>14.</strong> Lalu kita juga perlu membuat kodingan yang berfungsi untuk menampilkan tombol favorit dengan ikon hati dan jumlah resep yang telah disimpan melalui FavoriteProvider. Jumlah favorit akan diperbarui secara otomatis menggunakan context.watch, sedangkan ketika tombol ditekan, aplikasi akan membuka halaman FavoritePage untuk melihat daftar resep yang telah ditambahkan ke favorit
+                            </p>
+                            <figure class="report-image">
+                                <img src="img/Laprak_Mobile8/G14.png" alt="Gambar 14">
+                            </figure>
+
+                            <p>
+                                <strong>15.</strong> Selanjutnya buat kodingan yang berfungsi untuk mengatur tema tampilan aplikasi, baik mode terang, mode gelap, maupun mengikuti pengaturan sistem perangkat. Fungsi setThemeMode() digunakan untuk mengubah tema aplikasi sesuai pilihan pengguna, sedangkan notifyListeners() memberi tahu seluruh widget yang menggunakan provider agar memperbarui tampilannya secara otomatis
+                            </p>
+                            <figure class="report-image">
+                                <img src="img/Laprak_Mobile8/G15.png" alt="Gambar 15">
+                            </figure>
+
+                            <p>
+                                <strong>16.</strong> Terakhir, kita perlu membuat kodingan ini yang berfungsi untuk menyediakan pengaturan tampilan aplikasi, khususnya untuk mengubah mode tema menjadi terang, gelap, atau mengikuti pengaturan sistem perangkat. context.watch&lt;ThemeProvider&gt;() digunakan untuk memantau perubahan tema, sedangkan ListTile menampilkan menu pengaturan beserta informasi tema yang sedang digunakan dan menjalankan _showThemeDialog() ketika menu ditekan
+                            </p>
+                            <figure class="report-image">
+                                <img src="img/Laprak_Mobile8/G16.png" alt="Gambar 16">
+                            </figure>
+
+                            <h5 class="custom-heading-blue mt-4">Output C1 dan C2</h5>
+                            <figure class="report-image">
+                                <img src="img/Laprak_Mobile8/G17.png" alt="Gambar 17">
+                            </figure>
+                            <figure class="report-image">
+                                <img src="img/Laprak_Mobile8/G18.png" alt="Gambar 18">
+                            </figure>
+                            <figure class="report-image">
+                                <img src="img/Laprak_Mobile8/G19.png" alt="Gambar 19">
+                            </figure>
+
+                            <p>
+                                <strong>17.</strong> Selanjutnya kita buat kodingan yang berfungsi untuk menginisialisasi aplikasi ResepKu C3 dengan menerapkan MultiProvider untuk mengelola data resep favorit, pengaturan tema, dan layanan pengambilan data resep dari API. Selanjutnya, MaterialApp mengatur konfigurasi aplikasi, seperti tema terang dan gelap, jenis huruf Poppins, menghilangkan tanda debug, menampilkan IdentityFooter pada setiap halaman, serta menetapkan HomePage sebagai halaman utama aplikasi
+                            </p>
+                            <figure class="report-image">
+                                <img src="img/Laprak_Mobile8/G20.png" alt="Gambar 20">
+                            </figure>
+
+                            <p>
+                                <strong>18.</strong> Setelah itu buat kodingan yang berfungsi untuk menambahkan resep baru ke API DummyJSON menggunakan metode HTTP POST dengan mengirimkan data berupa nama makanan, jenis masakan, dan waktu memasak dalam format JSON. Setelah mendapatkan respons dari server, kode memeriksa status keberhasilan, mengubah respons JSON menjadi objek Recipe, dan mengembalikannya agar dapat digunakan oleh aplikasi
+                            </p>
+                            <figure class="report-image">
+                                <img src="img/Laprak_Mobile8/G21.png" alt="Gambar 21">
+                            </figure>
+
+                            <p>
+                                <strong>19.</strong> Kemudian buat kodingan yang berfungsi untuk menyediakan kolom input nama resep, jenis masakan, dan waktu memasak, serta melakukan validasi agar data yang dimasukkan sesuai dengan ketentuan. Tombol Simpan menjalankan fungsi _save() untuk mengirimkan data resep, sedangkan indikator CircularProgressIndicator ditampilkan selama proses penyimpanan berlangsung dan tombol dinonaktifkan sementara
+                            </p>
+                            <figure class="report-image">
+                                <img src="img/Laprak_Mobile8/G22.png" alt="Gambar 22">
+                            </figure>
+
+                            <p>
+                                <strong>20.</strong> Lalu buat kodingan yang berfungsi untuk mengatur proses pengambilan dan penyegaran data resep melalui initState(), _reload(), dan _refresh(), serta menyediakan fungsi _openAddPage() untuk membuka halaman penambahan resep baru. Setelah pengguna menyimpan resep dan kembali ke halaman utama, aplikasi menampilkan notifikasi menggunakan SnackBar yang berisi nama serta ID resep yang diterima server, dengan catatan bahwa DummyJSON hanya menyimulasikan proses penyimpanan dan tidak menyimpan data secara permanen
+                            </p>
+                            <figure class="report-image">
+                                <img src="img/Laprak_Mobile8/G23.png" alt="Gambar 23">
+                            </figure>
+
+                            <p>
+                                <strong>21.</strong> Selanjutnya buat kodingan yang berufungsi untuk menambahkan FloatingActionButton pada halaman utama yang berfungsi sebagai tombol untuk menambahkan resep baru dengan menampilkan ikon tambah (+). Ketika tombol ditekan, fungsi _openAddPage() dijalankan untuk membuka halaman AddRecipePage sehingga pengguna dapat mengisi dan mengirimkan data resep baru
+                            </p>
+                            <figure class="report-image">
+                                <img src="img/Laprak_Mobile8/G24.png" alt="Gambar 24">
+                            </figure>
+
+                            <h5 class="custom-heading-blue mt-4">Output C3</h5>
+                            <figure class="report-image">
+                                <img src="img/Laprak_Mobile8/G25.png" alt="Gambar 25">
+                            </figure>
+                            <figure class="report-image">
+                                <img src="img/Laprak_Mobile8/G26.png" alt="Gambar 26">
+                            </figure>
+
+                            <p>
+                                <strong>22.</strong> Selanjutnya kita akan buat kodingan yang berfungsi untuk menginisialisasi aplikasi ResepKu L1 dengan menerapkan MultiProvider untuk mengelola data resep favorit, pengaturan tema, dan layanan pengambilan data resep dari API. Selanjutnya, MaterialApp mengatur konfigurasi tampilan aplikasi, seperti tema terang dan gelap, jenis huruf Poppins, menghilangkan tanda debug, menampilkan IdentityFooter pada setiap halaman, serta menetapkan HomePage sebagai halaman utama aplikasi
+                            </p>
+                            <figure class="report-image">
+                                <img src="img/Laprak_Mobile8/G27.png" alt="Gambar 27">
+                            </figure>
+
+                            <h5 class="custom-heading-blue mt-4">Output L1</h5>
+                            <figure class="report-image">
+                                <img src="img/Laprak_Mobile8/G28.png" alt="Gambar 28">
+                            </figure>
+
+                            <p>
+                                <strong>23.</strong> Selanjutnya kita akan membuat kodingan yang berfungsi untuk mencari resep berdasarkan kata kunci yang dimasukkan pengguna melalui API DummyJSON menggunakan metode GET, serta addRecipe() untuk mengirimkan data resep baru ke server menggunakan metode POST dalam format JSON. Kedua fungsi tersebut memeriksa status respons server dan mengolah data JSON menjadi objek Recipe agar dapat digunakan dan ditampilkan oleh aplikasi
+                            </p>
+                            <figure class="report-image">
+                                <img src="img/Laprak_Mobile8/G29.png" alt="Gambar 29">
+                            </figure>
+
+                            <p>
+                                <strong>24.</strong> Setelah itu buat kodingan yang berfungsi untuk mengatur proses pencarian resep berdasarkan kata kunci yang dimasukkan pengguna melalui TextEditingController. Fungsi _searchRecipes() akan menjalankan pencarian melalui RecipeService ketika pengguna menekan Enter, mengosongkan hasil pencarian apabila kata kunci kosong, serta memperbarui data pencarian menggunakan setState(), sedangkan dispose() digunakan untuk membersihkan controller ketika halaman tidak lagi digunakan
+                            </p>
+                            <figure class="report-image">
+                                <img src="img/Laprak_Mobile8/G30.png" alt="Gambar 30">
+                            </figure>
+
+                            <p>
+                                <strong>25.</strong> Kemudian buat kodingan yang berfungsi untuk menampilkan kolom pencarian resep pada bagian AppBar dengan menggunakan TextField yang terhubung ke _searchController untuk membaca kata kunci yang dimasukkan pengguna. Atribut autofocus membuat kolom pencarian langsung aktif ketika halaman dibuka, sedangkan onSubmitted menjalankan fungsi _searchRecipes ketika pengguna menekan tombol Enter atau Search pada keyboard
+                            </p>
+                            <figure class="report-image">
+                                <img src="img/Laprak_Mobile8/G31.png" alt="Gambar 31">
+                            </figure>
+
+                            <p>
+                                <strong>26.</strong> Lalu buat kodingan yang berfungsi untuk mengatur tampilan bagian utama halaman pencarian berdasarkan kondisi _recipesFuture, yaitu menampilkan ikon pencarian dan petunjuk ketika pengguna belum memasukkan kata kunci, serta menggunakan FutureBuilder untuk memproses hasil pencarian. Selama proses pencarian berlangsung, aplikasi menampilkan CircularProgressIndicator sebagai indikator bahwa data resep sedang dimuat dari API.
+                            </p>
+                            <figure class="report-image">
+                                <img src="img/Laprak_Mobile8/G32.png" alt="Gambar 32">
+                            </figure>
+
+                            <p>
+                                <strong>27.</strong> Selanjutnya buat kodingan yang berfungsi untuk mengatur proses pencarian resep pada halaman SearchPage, dengan fungsi dispose() untuk membersihkan TextEditingController ketika halaman ditutup agar tidak terjadi penggunaan memori yang tidak diperlukan. Sementara itu, fungsi _searchRecipes() mengambil kata kunci dari pengguna, menghapus spasi berlebih, mengosongkan hasil pencarian jika kata kunci kosong, serta menjalankan pencarian melalui RecipeService dan memperbarui tampilan menggunakan setState()
+                            </p>
+                            <figure class="report-image">
+                                <img src="img/Laprak_Mobile8/G33.png" alt="Gambar 33">
+                            </figure>
+
+                            <p>
+                                <strong>28.</strong> Setelah itu buat kodingan yang berfungsi untuk menyediakan tombol pengubah tampilan resep antara bentuk daftar (list) dan kotak (grid) melalui IconButton. Ketika tombol ditekan, nilai _isGrid akan diubah menggunakan setState() sehingga ikon dan tampilan resep diperbarui secara otomatis sesuai pilihan pengguna
+                            </p>
+                            <figure class="report-image">
+                                <img src="img/Laprak_Mobile8/G34.png" alt="Gambar 34">
+                            </figure>
+
+                            <p>
+                                <strong>29.</strong> Kemudian buat kodingan yang berfungsi untuk mengubah nama resep melalui dialog AlertDialog yang menampilkan kolom input dengan nama resep sebelumnya sebagai nilai awal. Pengguna dapat memasukkan nama baru, kemudian menekan tombol Simpan untuk mengembalikan nama yang telah diperbarui atau tombol Batal untuk membatalkan perubahan tanpa menyimpan data
+                            </p>
+                            <figure class="report-image">
+                                <img src="img/Laprak_Mobile8/G35.png" alt="Gambar 35">
+                            </figure>
+
+                            <p>
+                                <strong>30.</strong> Lalu buat kodingan yang berfungsi untuk menampilkan dialog konfirmasi sebelum pengguna menghapus resep, dengan menampilkan nama resep yang akan dihapus. Pengguna dapat memilih tombol Hapus untuk mengonfirmasi penghapusan atau tombol Batal untuk membatalkan tindakan, kemudian hasil pilihan disimpan dalam variabel confirmed dalam bentuk nilai boolean (true atau false)
+                            </p>
+                            <figure class="report-image">
+                                <img src="img/Laprak_Mobile8/G36.png" alt="Gambar 36">
+                            </figure>
+
+                            <p>
+                                <strong>31.</strong> Selanjutnya buat kodingan yang berfungsi untuk menyediakan menu pilihan pengelolaan resep, yaitu Ubah nama dan Hapus resep yang ditampilkan ketika pengguna menekan tombol menu. Melalui onSelected, aplikasi akan menjalankan fungsi _editRecipeName() untuk mengubah nama resep atau _confirmDeleteRecipe() untuk menampilkan konfirmasi sebelum resep dihapus
+                            </p>
+                            <figure class="report-image">
+                                <img src="img/Laprak_Mobile8/G37.png" alt="Gambar 37">
+                            </figure>
+
+                            <p>
+                                <strong>32.</strong> Setelah itu buat kodingan yang berfungsi untuk menampilkan nama resep sebagai judul pada bagian atas halaman sekaligus menampilkan gambar resep dari internet menggunakan CachedNetworkImage. Selama gambar sedang dimuat, aplikasi menampilkan warna latar dan ikon makanan sebagai tampilan sementara (placeholder), sehingga halaman tetap terlihat rapi sebelum gambar berhasil ditampilkan
+                            </p>
+                            <figure class="report-image">
+                                <img src="img/Laprak_Mobile8/G38.png" alt="Gambar 38">
+                            </figure>
+
+                            <h5 class="custom-heading-blue mt-4">Output L2</h5>
+                            <figure class="report-image">
+                                <img src="img/Laprak_Mobile8/G39.png" alt="Gambar 39">
+                            </figure>
+                            <figure class="report-image">
+                                <img src="img/Laprak_Mobile8/G40.png" alt="Gambar 40">
+                            </figure>
+                            <figure class="report-image">
+                                <img src="img/Laprak_Mobile8/G41.png" alt="Gambar 41">
+                            </figure>
+
+                            <p>
+                                <strong>33.</strong> Selanjutnya buat kodingan yang berfungsi untuk menginisialisasi aplikasi ResepKu L2 dengan menerapkan MultiProvider untuk mengelola data resep favorit, pengaturan tema, dan layanan pengambilan data resep dari API. Selanjutnya, MaterialApp mengatur konfigurasi tampilan aplikasi, seperti tema terang dan gelap, jenis huruf Poppins, menghilangkan tanda debug, menampilkan IdentityFooter pada setiap halaman, serta menetapkan HomePage sebagai halaman utama aplikasi
+                            </p>
+                            <figure class="report-image">
+                                <img src="img/Laprak_Mobile8/G42.png" alt="Gambar 42">
+                            </figure>
+
+                            <h4 class="custom-heading-blue mt-4">LANGKAH PENGERJAAN D2</h4>
+                            <figure class="report-image">
+                                <img src="img/Laprak_Mobile8/G43.png" alt="Gambar 43">
+                            </figure>
+
+                            <h4 class="custom-heading-blue mt-4">TABEL LANGKAH A1</h4>
+                            <figure class="report-image">
+                                <img src="img/Laprak_Mobile8/G44.png" alt="Gambar 44">
+                            </figure>
+
+                            <h4 class="custom-heading-blue mt-4">PERTANYAAN REFLEKTIF</h4>
+
+                            <p>
+                                <strong>1. Pada skenario 2, setiap refresh membuat objek Recipe yang baru dari JSON. Mengapa status favorit tetap benar? Hubungkan dengan cara FavoriteProvider membandingkan resep (Modul 6).</strong>
+                            </p>
+                            <p>
+                                Status favorit tetap terjaga karena FavoriteProvider tidak membandingkan objek Recipe secara langsung, melainkan menggunakan atribut id sebagai acuan. Jadi, meskipun data resep diperbarui dan menghasilkan objek baru dari JSON, aplikasi tetap dapat mengenali resep favorit selama ID-nya tidak berubah
+                            </p>
+
+                            <p>
+                                <strong>2. Pada skenario 3, mengapa menekan tombol grid tidak memunculkan indikator loading? Apa yang akan terjadi jika future ditulis langsung di dalam build()?</strong>
+                            </p>
+                            <p>
+                                Tombol grid tidak menampilkan indikator loading karena _recipesFuture disimpan dalam variabel state dan hanya dibuat saat initState() dijalankan. Ketika tombol grid ditekan, setState() hanya mengubah nilai _isGrid, sehingga FutureBuilder tetap menggunakan proses pengambilan data yang sama dan tidak mengirimkan permintaan HTTP baru
+                            </p>
+
+                            <p>
+                                <strong>3. HomePage tidak memanggil http.get secara langsung, melainkan melalui RecipeService. Sebutkan dua keuntungan cara ini.</strong>
+                            </p>
+                            <p>
+                                Penggunaan RecipeService memiliki beberapa manfaat, yaitu memisahkan proses komunikasi HTTP dari bagian tampilan sehingga kode HomePage lebih sederhana dan mudah dipahami, serta memusatkan pengaturan permintaan data seperti URL API, batas waktu koneksi, dan pemeriksaan respons server. Selain itu, RecipeService dapat digunakan kembali pada halaman lain tanpa harus menulis ulang kode untuk proses komunikasi HTTP
+                            </p>
+
+                            <p>
+                                <strong>4. Setelah POST berhasil, server memberi id baru, tetapi resep tidak muncul saat daftar dimuat ulang. Jelaskan penyebabnya, dan bagaimana aplikasi dengan server sungguhan biasanya menampilkan data yang baru ditambahkan</strong>
+                            </p>
+                            <p>
+                                Resep tidak muncul kembali setelah daftar diperbarui karena DummyJSON hanya menyimulasikan proses POST tanpa menyimpan data secara permanen. Selain itu, aplikasi hanya menampilkan informasi respons melalui SnackBar dan tidak menambahkan resep baru ke daftar lokal, sedangkan pada server sebenarnya data akan tersimpan di database sehingga dapat diambil kembali oleh aplikasi
+                            </p>
+
+                            <p>
+                                <strong>5. Di AddRecipePage terdapat if (!mounted) return; setelah await. Jelaskan skenario yang dicegah oleh baris tersebut.</strong>
+                            </p>
+                            <p>
+                                Baris if (!mounted) return; digunakan untuk memastikan halaman AddRecipePage masih aktif sebelum aplikasi mengakses context atau menjalankan navigasi. Hal ini mencegah terjadinya kesalahan ketika pengguna meninggalkan halaman saat proses pengiriman data masih berlangsung, sehingga Navigator.pop() hanya dijalankan jika halaman masih terpasang
+                            </p>
+
+                            <h4 class="custom-heading-blue mt-4">KESIMPULAN</h4>
+                            <p>
+                                Berdasarkan praktikum yang telah dilakukan, dapat disimpulkan bahwa integrasi REST API pada aplikasi mobile menggunakan Flutter memungkinkan aplikasi mengambil dan mengelola data secara dinamis melalui komunikasi dengan server. Penerapan HTTP GET digunakan untuk mengambil dan mencari data resep, sedangkan HTTP POST, PUT, dan DELETE digunakan untuk menambahkan, mengubah, dan menghapus data. Pengolahan respons JSON dilakukan melalui model Recipe dengan factory fromJson(), sementara RecipeService berfungsi memisahkan proses komunikasi HTTP dari tampilan aplikasi. Selain itu, penggunaan Future, async/await, FutureBuilder, dan Provider membantu mengelola proses asinkron serta state aplikasi, termasuk kondisi loading, error, daftar favorit, dan pengaturan tema. Melalui pengembangan Folder C1, C3, L1, L2, dan L3, praktikum ini memberikan pemahaman mengenai penerapan HTTP Request, pengolahan JSON, validasi form, serta pengelolaan data melalui REST API sebagai bagian dari pengembangan aplikasi mobile menggunakan Flutter
+                            </p>
+
+                        </div>
+                        <div class="d-flex justify-content-end gap-2 mt-4">
+                            <a class="btn custom-btn-outline px-4" id="repositoryButton" href="https://github.com/Rohim110606/Abdur-Rohim_2411533015_Aplikasi-Mobile_A_Resepku.git" target="_blank" rel="noopener noreferrer">
+                                <i class="fab fa-github me-2"></i>Repository
+                            </a>
+                            <a class="btn custom-btn-blue px-4" href="project.html" role="button">
+                                <i class="fas fa-arrow-left me-2"></i>Kembali
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer id="contact" class="bg-dark text-white pt-5 pb-3">
+        <div class="container">
+            <div class="row">
+
+                <div class="col-md-4 mb-4">
+                    <h5 class="fw-bold text-white mb-3">Abdur Rohim</h5>
+                    <p class="text-secondary small">
+                        Mahasiswa Informatika yang bersemangat dalam pengembangan web dan kepemimpinan tim.
+                        Siap berkontribusi dalam kegiatan yang menantang.
+                    </p>
+                </div>
+
+                <div class="col-md-3 offset-md-1 mb-4">
+                    <h5 class="fw-bold text-white mb-3">Quick Links</h5>
+                    <ul class="list-unstyled">
+                        <li>
+                            <a href="index.html" class="text-secondary text-decoration-none">Home</a>
+                        </li>
+
+                        <li>
+                            <a href="about.html" class="text-secondary text-decoration-none">About</a>
+                        </li>
+
+                        <li>
+                            <a href="portfolio.html" class="text-secondary text-decoration-none">Portfolio</a>
+                        </li>
+
+                        <li>
+                            <a href="project.html" class="text-secondary text-decoration-none">Project</a>
+                        </li>
+
+                        <li>
+                            <a href="contact.html" class="text-secondary text-decoration-none">Contact</a>
+                        </li>
+                    </ul>
+                </div>
+
+                <div class="col-md-4 mb-4">
+                    <h5 class="fw-bold text-white mb-3">Connect</h5>
+                    <div class="social-icons pt-1">
+                        <a href="#" class="text-white me-3">
+                            <i class="fab fa-facebook-f fa-lg"></i>
+                        </a>
+
+                        <a href="#" class="text-white me-3">
+                            <i class="fab fa-twitter fa-lg"></i>
+                        </a>
+
+                        <a href="#" class="text-white me-3">
+                            <i class="fab fa-linkedin-in fa-lg"></i>
+                        </a>
+
+                        <a href="#" class="text-white">
+                            <i class="fab fa-instagram fa-lg"></i>
+                        </a>
+                    </div>
+                </div>
+
+            </div>
+
+            <hr class="text-secondary">
+
+            <div class="text-center pt-2">
+                <p class="mb-0 text-secondary">
+                    &copy; 2025 Abdur Rohim. All rights reserved.
+                </p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+
+</body>
+</html>
